@@ -1,0 +1,52 @@
+//#ff7400 NARANJA
+//#073763 AZUL OSCURO
+//#399271 VERDE
+//@import './componentes/modalInstructions';
+
+//@font-face {
+  //  font-family: "goldman-regular";
+  //  src: url("../fonts/Goldman-Regular.ttf");
+//}
+
+body{
+    margin-top:150px;
+    background-color: rgb(67, 110, 32);
+    background-image: url(/images/fondo.png);
+    background-size:100% 100%;    
+    color: rgb(255, 255, 255);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    
+}
+
+header {
+    position: fixed;
+    top:0px;
+    left:0px;
+    width: 100%;
+    z-index: 9999;
+    .navbar-dark{
+        background-color: #000;
+        border-bottom:5px solid #F3D94E;
+    }    
+    a,a:hover{
+        color:#F3D94E;
+        margin-left:10px;
+    }
+}
+
+#navbarNav{
+    display: flex;
+}
+
+.cartita{
+    height: 200px;
+    width: 200px;
+    border:2px solid black;
+    border-radius: 10px;
+    background-color: yellow;
+    font-size: 30px;
+    text-align: center;
+    color: black;
+}
