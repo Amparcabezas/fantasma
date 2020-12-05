@@ -58,7 +58,7 @@ main {
 
 :root {
   --bg: #1a1e24;
-  --color: #eee;
+  --color: white;
   --font: Montserrat, Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -117,5 +117,13 @@ main {
 .button:hover:after {
   -webkit-transform: none;
           transform: none;
+}
+.timer {
+  font-size: 40px;
+  border: 5px solid orange;
+  border-radius: 5px;
+  padding: 5px 20px;
+  background-color: #399271;
+  color: white;
 }
 /*# sourceMappingURL=base.css.map */

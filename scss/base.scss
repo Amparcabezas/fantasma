@@ -57,7 +57,7 @@ justify-content: space-between;
 
 :root {
     --bg: #1a1e24;
-    --color: #eee;
+    --color: white;
     --font: Montserrat, Roboto, Helvetica, Arial, sans-serif;
   }
   
@@ -113,3 +113,14 @@ justify-content: space-between;
     transform: none;
   }
   /*# sourceMappingURL=base.css.map */
+
+  .timer{
+      font-size:40px;
+      border: 5px solid orange;
+      border-radius:5px;
+      padding: 5px 20px;
+      
+      background-color: #399271;
+      color:white;
+
+  }
