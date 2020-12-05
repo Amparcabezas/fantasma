@@ -9,44 +9,107 @@
 //}
 
 body{
-    margin-top:150px;
-    background-color: rgb(67, 110, 32);
+    
+    background-color: rgb(108, 131, 89);
     background-image: url(/images/fondo.png);
     background-size:100% 100%;    
     color: rgb(255, 255, 255);
     height: 100vh;
+        
+}
+
+header{
+    display:flex;
+    justify-content: flex-end;
+    padding: 15px;
+}
+
+button{
+    padding: 10px;
+    margin:10px;
+}
+
+
+main{
     display: flex;
+    align-items: center;
     justify-content: center;
-    
+    height: 100vh;
 }
 
-header {
-    position: fixed;
-    top:0px;
-    left:0px;
-    width: 100%;
-    z-index: 9999;
-    .navbar-dark{
-        background-color: #000;
-        border-bottom:5px solid #F3D94E;
-    }    
-    a,a:hover{
-        color:#F3D94E;
-        margin-left:10px;
-    }
+.e{
+    height: 150px;
+    width: auto;
 }
 
-#navbarNav{
-    display: flex;
+.rowElements1{
+justify-content: space-between;
+}
+
+.rowElements2{
+    justify-content: space-between;
+    margin-top:-80px;
 }
 
 .cartita{
-    height: 200px;
-    width: 200px;
-    border:2px solid black;
-    border-radius: 10px;
-    background-color: yellow;
-    font-size: 30px;
-    text-align: center;
-    color: black;
+    margin-top:-80px;
 }
+
+:root {
+    --bg: #1a1e24;
+    --color: #eee;
+    --font: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+  }
+  
+  .wrapper {
+    padding: 1.5rem 0;
+    
+    filter: url('#goo');
+  }
+  
+  .button {
+    margin: 10px;
+    display: inline-block;
+    text-align: center;
+    background: var(--color);
+    color: var(--bg);
+    font-weight: bold;
+    padding: 1.18em 1.32em 1.03em;
+    line-height: 1;
+    border-radius: 1em;
+    position: relative;
+    min-width: 8.23em;
+    text-decoration: none;
+    font-family: var(--font);
+    font-size: 1.25rem;
+  }
+  
+  .button:before,
+  .button:after {
+    width: 4.4em;
+    height: 2.95em;
+    position: absolute;
+    content: "";
+    display: inline-block;
+    background: var(--color);
+    border-radius: 50%;
+    transition: transform 1s ease;
+    transform: scale(0);
+    z-index: -1;
+  }
+  
+  .button:before {
+    top: -25%;
+    left: 20%;
+  }
+  
+  .button:after {
+    bottom: -25%;
+    right: 20%;
+  }
+  
+  .button:hover:before,
+  .button:hover:after {
+    transform: none;
+  }
+  /*# sourceMappingURL=base.css.map */
