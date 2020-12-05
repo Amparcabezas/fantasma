@@ -8,9 +8,12 @@
   //  src: url("../fonts/Goldman-Regular.ttf");
 //}
 
+
+@import './componentes/botones';
+
 body{
     
-    background-color: rgb(108, 131, 89);
+    background-color: rgb(131, 114, 89);
     background-image: url(/images/fondo.png);
     background-size:100% 100%;    
     color: rgb(255, 255, 255);
@@ -37,6 +40,8 @@ main{
     height: 100vh;
 }
 
+
+//ELEMENTOS Y DISPOSICIÓN
 .e{
     height: 150px;
     width: auto;
@@ -51,68 +56,11 @@ justify-content: space-between;
     margin-top:-80px;
 }
 
-.cartita{
+.cartaCentral{
     margin-top:-80px;
 }
 
-:root {
-    --bg: #1a1e24;
-    --color: white;
-    --font: Montserrat, Roboto, Helvetica, Arial, sans-serif;
-  }
-  
-  .wrapper {
-    padding: 1.5rem 0;
-    
-    filter: url('#goo');
-  }
-  
-  .button {
-    margin: 10px;
-    display: inline-block;
-    text-align: center;
-    background: var(--color);
-    color: var(--bg);
-    font-weight: bold;
-    padding: 1.18em 1.32em 1.03em;
-    line-height: 1;
-    border-radius: 1em;
-    position: relative;
-    min-width: 8.23em;
-    text-decoration: none;
-    font-family: var(--font);
-    font-size: 1.25rem;
-  }
-  
-  .button:before,
-  .button:after {
-    width: 4.4em;
-    height: 2.95em;
-    position: absolute;
-    content: "";
-    display: inline-block;
-    background: var(--color);
-    border-radius: 50%;
-    transition: transform 1s ease;
-    transform: scale(0);
-    z-index: -1;
-  }
-  
-  .button:before {
-    top: -25%;
-    left: 20%;
-  }
-  
-  .button:after {
-    bottom: -25%;
-    right: 20%;
-  }
-  
-  .button:hover:before,
-  .button:hover:after {
-    transform: none;
-  }
-  /*# sourceMappingURL=base.css.map */
+ //TEMPORIZADOR 
 
   .timer{
       font-size:40px;

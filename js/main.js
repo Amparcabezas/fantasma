@@ -1,7 +1,7 @@
 let jugador=document.querySelector("input[name='jugador']")
 let baraja=[]
 let botonIniciar=document.querySelector("#lnkIniciar")
-let cartita=document.querySelector(".cartita")
+let cartaCentral=document.querySelector(".cartaCentral")
 
 for(let i=0;i<40;i++){
 let carta={
@@ -27,7 +27,7 @@ botonIniciar.onclick=()=>{
         el.onclick=match
     })
     
-    cartita.textContent=baraja[0].nombre
+    cartaCentral.textContent=baraja[0].nombre
 
 } 
 
@@ -39,7 +39,7 @@ function match(event){
 
 
 
-
+//guardar jugador en local storage
 
 function guardarPartida(){
     let jugadasDe=JSON.parse(localStorage.getItem(jugador.value))
