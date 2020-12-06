@@ -36,20 +36,32 @@ let baraja=[]
 let elementos = ["raton","sillon","fantasma","botella","libro"]
 let cartaCentral = document.querySelector(".cartaCentral")
 
-for(let i=1;i<41;i++){
-let carta={
-    nombre:"c"+i,
-    imagen: "c"+i+".svg",
-    id: i,
-}
+for (let i=0;i<elementos.length;i++){
+  //console.log(elementos[i])
+  for (let j=1; j<9; j++){
+    let carta={
+        valor:elementos[i],
+        imagen: elementos[i]+j+".svg",
+    }
     baraja.push(carta)
+  }
+    
 }
 baraja = baraja.sort(()=>Math.random()-0.5)
-console.log(baraja)
+//console.log(baraja)
 
 let jugada = document.createElement("img")
 jugada.src = "./images/baraja/" + baraja[0].imagen
 cartaCentral.appendChild(jugada)
+
+//Match - Coincidencia
+let e = document.querySelectorAll(".e")
+console.log(e)
+e[0].onclick=()=>console.log("haz hecho click en el fantasma")
+e[1].onclick=()=>console.log("haz hecho click en el libro")
+e[2].onclick=()=>console.log("haz hecho click en el botella")
+e[3].onclick=()=>console.log("haz hecho click en el raton")
+e[4].onclick=()=>console.log("haz hecho click en el sofa")
 
 
 //guardar jugador en local storage
