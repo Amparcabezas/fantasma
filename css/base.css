@@ -1,5 +1,93 @@
+.play_screen {
+  background-image: url("../images/fondo.png");
+  background-color: #837259;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-size: 100% 100%;
+  color: white;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 15px;
+  top: 0;
+  width: 100%;
+  height: 20%;
+}
+
+button {
+  padding: 10px;
+  margin: 10px;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.e {
+  height: 150px;
+  width: auto;
+}
+
+.rowElements1 {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.rowElements2 {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: -80px;
+}
+
+.cartaCentral {
+  margin-top: -80px;
+}
+
+.timer {
+  font-size: 40px;
+  border: 5px solid orange;
+  border-radius: 5px;
+  padding: 5px 20px;
+  background-color: #399271;
+  color: white;
+}
+
+.lab {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 3em;
+  color: #000;
+}
+
+.juPoints {
+  position: relative;
+  padding-top: 30px;
+}
+
 :root {
-  --bg: #1a1e24;
+  --bg: black;
   --color: white;
   --font: Montserrat, Roboto, Helvetica, Arial, sans-serif;
 }
@@ -60,70 +148,149 @@
   -webkit-transform: none;
           transform: none;
 }
-body {
-  background-color: #837259;
-  background-image: url(/images/fondo.png);
-  background-size: 100% 100%;
+.instructions_screen {
+  background-image: url(https://previews.123rf.com/images/frenta/frenta1109/frenta110900001/10515217-fondo-de-halloween-vector-con-ara%C3%B1a-y-web.jpg);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  color: #000;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.titleInstructions {
+  background-color: #073763;
+  border: 3px solid #ff7400;
   color: white;
-  height: 100vh;
 }
 
-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  padding: 15px;
+.explicacion_instrucciones {
+  height: 300px;
+  background-color: white;
+  border: 3px solid #399271;
 }
 
-button {
-  padding: 10px;
-  margin: 10px;
+.texto {
+  color: #073763;
+  font-weight: bold;
+  padding: 20px;
 }
 
-main {
+.count_screen {
+  background-color: #306e3f;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-size: 100% 100%;
+  color: orange;
+  font-size: 300px;
+}
+
+body {
+  background-image: url("https://www.wallpaperup.com/uploads/wallpapers/2020/05/02/1376240/6ebe207e4e3ca934f18b5a0c1b3ec4fe.jpg");
+}
+
+.principal_screen {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.title_play {
+  color: white;
+  margin-top: 20px;
+}
+
+.secti {
+  margin: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 100vh;
 }
 
-.e {
-  height: 150px;
-  width: auto;
+.image {
+  width: 50px;
 }
 
-.rowElements1 {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+.logo_play {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.rowElements2 {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-top: -80px;
-}
-
-.cartaCentral {
-  margin-top: -80px;
-}
-
-.timer {
-  font-size: 40px;
-  border: 5px solid orange;
-  border-radius: 5px;
-  padding: 5px 20px;
-  background-color: #399271;
+.bot {
+  background-color: #073763;
+  border: 3px solid #399271;
   color: white;
+}
+
+.bot:hover {
+  color: #ff7400;
+}
+
+.i {
+  margin: 20px;
+}
+
+.footer_principal {
+  background-color: transparent;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px;
+}
+
+.bieiviLogo {
+  margin: 5px;
+  height: 30px;
+}
+
+.redes {
+  color: #fff;
+}
+
+input {
+  border: 0px;
+  border: 3px solid #ff7400;
+  background: white;
+  color: #073763;
+  border-radius: 5px;
 }
 /*# sourceMappingURL=base.css.map */

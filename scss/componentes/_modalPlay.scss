@@ -1,0 +1,100 @@
+//#ff7400 NARANJA
+//#073763 AZUL OSCURO
+//#399271 VERDE
+//@import './componentes/modalInstructions';
+
+//@font-face {
+  //  font-family: "goldman-regular";
+  //  src: url("../fonts/Goldman-Regular.ttf");
+//}
+
+
+
+
+.play_screen{
+    background-image: url("../images/fondo.png");
+    background-color: rgb(131, 114, 89);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    background-size:100% 100%;    
+    color: rgb(255, 255, 255);
+    
+    
+    
+        
+}
+
+header{
+    display:flex;
+    justify-content: flex-end;
+    padding: 15px;
+    top: 0;
+    width: 100%;
+    height: 20%;
+}
+
+button{
+    padding: 10px;
+    margin:10px;
+}
+
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+    
+}
+
+
+//ELEMENTOS Y DISPOSICIÓN
+.e{
+    height: 150px;
+    width: auto;
+}
+
+.rowElements1{
+justify-content: space-between;
+}
+
+.rowElements2{
+    justify-content: space-between;
+    margin-top:-80px;
+}
+
+.cartaCentral{
+    margin-top:-80px;
+}
+
+ //TEMPORIZADOR 
+
+  .timer{
+      font-size:40px;
+      border: 5px solid orange;
+      border-radius:5px;
+      padding: 5px 20px;
+      
+      background-color: #399271;
+      color:white;
+
+  }
+
+  .lab{
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 3em;
+    color: #000;
+  }
+
+
+.juPoints{
+    position: relative;
+    padding-top: 30px;
+    
+  }

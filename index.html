@@ -6,16 +6,161 @@
     <title>Fantasma Vibra</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/base.css">
     
   </head>
-  <body>
-   <!-- BOTONES INICIAR E INSTRUCCIONES -->
+  <body >
 
+    <!--PANTALLA PRINCIPAL-->
+  
+    <article class="container principal_screen">
+    <!--TITULO-->
+      <div class="row secti title">
+        <div class="col title_play text-center"><h3>FANTASMA</h3><img class="logo_ppt" src="images/baraja/e-fantasma.svg"></div>
+      </div>
+    <!--INTRODUCIR NOMBRE-->
+    <div class="row secti introduce">        
+        <form id="frmcontacto">
+          <p><input type="text" name="txtname"placeholder="Escribe tu nombre"></p>
+        </form>
+    </div>
+    <!--BOTON PLAY-->
+    <div class=" wraper  d-flex justify-content-center align-items-baseline" id="openPlay" >
+      <a class="button"  href="#">Play</a>
+    </div>
+    
+    <!-- Filter: https://css-tricks.com/gooey-effect/ -->
+    <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+      <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+      </filter>
+    </defs>
+    </svg>
+
+    
+
+  </div>
+    
    
-  <header class="header">
+  </article>
+</main>
+    <footer>
+      <div class="footer_principal">
+          <div>
+            Desarrollado por <img class="bieiviLogo"src="images/svg/logos/logoBiEiVi_sobrenegro.svg" alt="Logotipo de BiEiVi">
+          </div>
+        <!-- REDES SOCIALES -->
+        <div class="redes_sociales">
+          <a class="redes" href="https://www.instagram.com/bieivi_buenavibra/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a class="redes" href="https://belopmardev.github.io/bieivi.github.io/bieivi/"  target="_blank" title="Enlace externo: página web de BiEiVi">VISITA LA WEB</a>
+        </div>  
+      </div>
+    </footer>
+
+
+  </body>
+   <!--INSTRUCCIONES-->
+   <div class=" wraper  d-flex justify-content-center align-items-baseline" id="openInstructions" >
+    <a class="button"  href="#">Instructions</a>
+  </div>
+  
+  <!-- Filter: https://css-tricks.com/gooey-effect/ -->
+  <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
+    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+    <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+    </filter>
+  </defs>
+  </svg>
+
+<!-- PANTALLA DE JUEGO -->
+
+   <!-- BOTON INICIAR  -->
+
+   <article class="play_screen" id="play">
+    <header class="header" >
+     <div class=" wraper  d-flex justify-content-center align-items-baseline" id="lnkIniciar" >
+       <a class="button"  href="#">Home</a>
+     </div>
+     
+     <!-- Filter: https://css-tricks.com/gooey-effect/ -->
+     <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+     <defs>
+       <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
+       <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+       <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+       </filter>
+     </defs>
+     </svg>
+ 
+     
+ 
+  
+     
+     
+   </header>
+   
+     <!-- CUERPO DEL EJERCICIO, RESULTADOS, TARJETAS -->
+   <main>
+     
+     <div class="container">
+       <div class="row d-flex">
+         <div class="col-12 d-flex justify-content-center align-items-baseline">
+           <span id="countdown" class="timer"></span>
+          
+         </div>
+       </div> 
+       <div class="row d-flex rowElements1">
+         <img class="e fantasma" src="images/baraja/e-fantasma.svg">
+         <img class="e libro" src="images/baraja/e-libro.svg">
+       </div>
+              
+       <!--CARTA CENTRAL-->
+       <div class="row d-flex justify-content-center">
+        
+         <div class="cartaCentral">
+           <img src="images/baraja/tarjeta_base.svg" id="img-carta" class="carta">
+         </div>
+         
+       </div>
+       <div class="row d-flex rowElements2">
+         <img class="e botella" src="images/baraja/e-botella.svg">
+         <img class="e ratón" src="images/baraja/e-raton.svg">
+       </div>
+       <div class="row d-flex justify-content-center">
+         <img class="e sofa" src="images/baraja/e-sofa.svg">
+       </div>
+ 
+       <section class="row juPoints justify-content-center">
+        <div class="d-flex player nombre justify-content-center">
+          <!-- <label class="lab"><b>Jugador: </b></label>&nbsp; -->
+          <div class="col-9 lab text_name players_title" id="player_name"><b>Nombre</b> </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <div class="col-3 lab text-center" id="points"> <b>0</b></div>
+        </div>
+      </section>
+
+     </div>
+   </main>
+ </article>    
+
+
+
+
+<!-- PANTALLA DE JUEGO -->
+
+   <!-- BOTON INICIAR  -->
+
+<article class="play_screen" id="play">
+   <header class="header" >
     <div class=" wraper  d-flex justify-content-center align-items-baseline" id="lnkIniciar" >
-      <a class="button" href="#">Menú</a>
+      <a class="button"  href="#">Empezar</a>
     </div>
     
     <!-- Filter: https://css-tricks.com/gooey-effect/ -->
@@ -81,14 +226,56 @@
       </div>
     </div>
   </main>
+</article>
+
+<!--VENTANA MODAL INSTRUCCIONES-->
+<article class="instructions_screen" id="instructions">
+  <section class="container">
+  <!--INSTRUCCIONES-->
+  <div class="row titleInstructions">
+    <h2 class="col title_intructions text-center">Instrucciones</h2>
+  </div>
+  <!--REGLAS DEL JUEGO-->
+    <section class="row explicacion_instrucciones">
+    <div class="texto">
+     
+    </div> 
+    </section>
+  <!--FOOTER JUEGO-->
+  <div class=" wraper  d-flex justify-content-center align-items-baseline" id="return" >
+    <a class="button"  href="#">Volver</a>
+  </div>
+  
+  <!-- Filter: https://css-tricks.com/gooey-effect/ -->
+  <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
+    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+    <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+    </filter>
+  </defs>
+  </svg>
+  
+  </div>
+  </section>
+</article>
+
+<!--VENTANA MODAL count-->
+<article class="count_screen" id="count_screen">
+  <section class="container">
+  
+  <div class="row justify-content-center">
     
+    <span id="countdown2"></span>
+  </div>
+</section>
+</article>
+
+
+
+
   
 
-    
-    
-
-    
     <script type="text/javascript" src="js/main.js"></script>
   
-  </body>
 </html>

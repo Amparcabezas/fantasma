@@ -9,66 +9,95 @@
 //}
 
 
+
+@import './componentes/modalPlay';
 @import './componentes/botones';
+@import './componentes/instructions';
+@import './componentes/count';
 
 body{
+    background-image: url("https://www.wallpaperup.com/uploads/wallpapers/2020/05/02/1376240/6ebe207e4e3ca934f18b5a0c1b3ec4fe.jpg") ;
     
-    background-color: rgb(131, 114, 89);
-    background-image: url(/images/fondo.png);
-    background-size:100% 100%;    
-    color: rgb(255, 255, 255);
-    height: 100vh;
-        
-}
-
-header{
-    display:flex;
-    justify-content: flex-end;
-    padding: 15px;
-}
-
-button{
-    padding: 10px;
-    margin:10px;
+    
 }
 
 
-main{
+.principal_screen{
+    
+    justify-content: center;
+    flex-direction: column;    
     display: flex;
     align-items: center;
+    
+    
+    
+}
+
+.title_play{
+color: white;
+margin-top:20px;
+
+}
+.secti{
+    margin:5px;
+    display: flex;
     justify-content: center;
-    height: 100vh;
 }
 
-
-//ELEMENTOS Y DISPOSICIÓN
-.e{
-    height: 150px;
-    width: auto;
+.image{
+    width:50px;
 }
 
-.rowElements1{
-justify-content: space-between;
-}
-
-.rowElements2{
-    justify-content: space-between;
-    margin-top:-80px;
-}
-
-.cartaCentral{
-    margin-top:-80px;
-}
-
- //TEMPORIZADOR 
-
-  .timer{
-      font-size:40px;
-      border: 5px solid orange;
-      border-radius:5px;
-      padding: 5px 20px;
+.logo_play{
+    display: flex;    
+    align-items: center;
       
-      background-color: #399271;
-      color:white;
+    
+}
 
-  }
+
+.bot{
+    background-color: #073763;
+    border: 3px solid#399271;
+    color: white;
+    
+}
+.bot:hover{
+    color:#ff7400;
+}
+.i{
+    margin: 20px;
+}
+
+
+.footer_principal{
+    background-color:transparent;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    
+}
+.bieiviLogo{
+    margin:5px;
+    height: 30px;
+}
+
+.redes{
+    color: #fff;
+
+}
+
+input{
+    border: 0px;
+    border: 3px solid#ff7400;
+    background: white;
+    color: #073763;
+    border-radius: 5px;
+}
+
