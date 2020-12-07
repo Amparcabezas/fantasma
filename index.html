@@ -13,9 +13,9 @@
   </head>
   <body >
 
-    <!--PANTALLA PRINCIPAL-->
+    <!--PANTALLA PRINCIPAL BIENVENIDA-->
   
-    <article class="container principal_screen">
+    <section class="container principal_screen">
     <!--TITULO-->
       <div class="row secti title">
         <div class="col title_play text-center"><h3>FANTASMA</h3><img class="logo_ppt" src="images/baraja/e-fantasma.svg"></div>
@@ -23,12 +23,12 @@
     <!--INTRODUCIR NOMBRE-->
     <div class="row secti introduce">        
         <form id="frmcontacto">
-          <p><input type="text" name="txtname"placeholder="Escribe tu nombre"></p>
+          <p><input type="text" name="txtname" placeholder="Escribe tu nombre"></p>
         </form>
     </div>
     <!--BOTON PLAY-->
     <div class=" wraper  d-flex justify-content-center align-items-baseline" id="openPlay" >
-      <a class="button"  href="#">Play</a>
+      <a class="button play"  href="#">Play</a>
     </div>
     
     <!-- Filter: https://css-tricks.com/gooey-effect/ -->
@@ -41,14 +41,27 @@
     </defs>
     </svg>
 
-    
-
+  
   </div>
+     <!--INSTRUCCIONES-->
+     <div class=" wraper  d-flex justify-content-center align-items-baseline" id="openInstructions" >
+      <a class="button"  href="#">Instrucciones</a>
+    </div>
+    
+    <!-- Filter: https://css-tricks.com/gooey-effect/ -->
+    <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+      <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+      </filter>
+    </defs>
+    </svg>
     
    
-  </article>
-</main>
-    <footer>
+  </section>
+
+  <footer>
       <div class="footer_principal">
           <div>
             Desarrollado por <img class="bieiviLogo"src="images/svg/logos/logoBiEiVi_sobrenegro.svg" alt="Logotipo de BiEiVi">
@@ -59,101 +72,96 @@
           <a class="redes" href="https://belopmardev.github.io/bieivi.github.io/bieivi/"  target="_blank" title="Enlace externo: página web de BiEiVi">VISITA LA WEB</a>
         </div>  
       </div>
-    </footer>
+  </footer>
 
 
-  </body>
-   <!--INSTRUCCIONES-->
-   <div class=" wraper  d-flex justify-content-center align-items-baseline" id="openInstructions" >
-    <a class="button"  href="#">Instructions</a>
-  </div>
-  
-  <!-- Filter: https://css-tricks.com/gooey-effect/ -->
-  <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
-  <defs>
-    <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
-    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-    <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
-    </filter>
-  </defs>
-  </svg>
+
+
 
 <!-- PANTALLA DE JUEGO -->
 
    <!-- BOTON INICIAR  -->
 
-   <article class="play_screen" id="play">
-    <header class="header" >
-     <div class=" wraper  d-flex justify-content-center align-items-baseline" id="lnkIniciar" >
-       <a class="button home"  href="#">Home</a>
-     </div>
-     
-     <!-- Filter: https://css-tricks.com/gooey-effect/ -->
-     <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
-     <defs>
-       <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
-       <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-       <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
-       </filter>
-     </defs>
-     </svg>
- 
-     
- 
-  
-     
-     
-   </header>
-   
-     <!-- CUERPO DEL EJERCICIO, RESULTADOS, TARJETAS -->
-   <main>
-     
-     <div class="container">
-       <div class="row d-flex">
-         <div class="col-12 d-flex justify-content-center align-items-baseline">
-           <span id="countdown" class="timer"></span>
-          
-         </div>
-       </div> 
-       <div class="row d-flex rowElements1">
-         <img class="e fantasma" src="images/baraja/e-fantasma.svg">
-         <img class="e libro" src="images/baraja/e-libro.svg">
-       </div>
-              
-       <!--CARTA CENTRAL-->
-       <div class="row d-flex justify-content-center">
+   <div class="play_screen" id="play">
+    <header class="header">
+      <div class=" wraper  d-flex justify-content-center align-items-baseline" id="lnkIniciar" >
+        <a class="button home"  href="#">Home</a>
+      </div>
+      
+      <!-- Filter: https://css-tricks.com/gooey-effect/ -->
+      <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <defs>
+        <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+        <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+        </filter>
+      </defs>
+      </svg>
+    </header>
+    
+      <!-- CUERPO DEL EJERCICIO, RESULTADOS, TARJETAS -->
+    <main>
+      
+      <div class="container">
+        <div class="row d-flex">
+          <div class="col-12 d-flex justify-content-center align-items-baseline">
+            <span id="countdown" class="timer"></span>
+           
+          </div>
+        </div> 
+        <div class="eBox">
+          <div class="row d-flex rowElements1">
+            <img class="e fantasma" src="images/baraja/e-fantasma.svg">
+            <img class="e libro" src="images/baraja/e-libro.svg">
+          </div>
+                 
+          <!--CARTA CENTRAL-->
+          <div class="row d-flex justify-content-center">
+           
+            <div class="cartaCentral"></div>
+            
+          </div>
+          <div class="row d-flex rowElements2">
+            <img class="e botella" src="images/baraja/e-botella.svg">
+            <img class="e raton" src="images/baraja/e-raton.svg">
+          </div>
+          <div class="row d-flex justify-content-center">
+            <img class="e sillon" src="images/baraja/e-sofa.svg">
+          </div>
+        </div>
         
-         <div class="cartaCentral">
+  
+        <section class="row juPoints justify-content-center">
+         <div class="col-12 d-flex justify-content-center player nombre">
+           <!-- <label class="lab"><b>Jugador: </b></label>&nbsp; -->
+           <b></b><div class="lab text_name players_title" id="player_name"></div></b>
          </div>
-         
-       </div>
-       <div class="row d-flex rowElements2">
-         <img class="e botella" src="images/baraja/e-botella.svg">
-         <img class="e ratón" src="images/baraja/e-raton.svg">
-       </div>
-       <div class="row d-flex justify-content-center">
-         <img class="e sofa" src="images/baraja/e-sofa.svg">
-       </div>
+         <div class="col-12 d-flex justify-content-center">
+           <b><div class="lab text-center" id="points"></div></b>
+         </div>
+       </section>
  
-       <section class="row juPoints justify-content-center">
-        <div class="d-flex player nombre justify-content-center">
-          <!-- <label class="lab"><b>Jugador: </b></label>&nbsp; -->
-          <div class="col-9 lab text_name players_title" id="player_name"><b>Nombre</b> </div>
-        </div>
-        <div class="d-flex justify-content-center">
-          <div class="col-3 lab text-center" id="points"> <b>0</b></div>
-        </div>
-      </section>
+      </div>
+    </main>
+ 
+   </div>
 
-     </div>
-   </main>
- </article>    
+<!--VENTANA MODAL count-->
+
+<section class="container count_screen" id="count_screen">
+  
+  <div class="row justify-content-center">
+    
+    <span id="countdown2"></span>
+  </div>
+</section>
+    
 
 
 
 <!--VENTANA MODAL INSTRUCCIONES-->
-<article class="instructions_screen" id="instructions">
-  <section class="container">
+
+  <section class="container instructions_screen" id="instructions">
   <!--INSTRUCCIONES-->
   <div class="row titleInstructions">
     <h2 class="col title_intructions text-center">Instrucciones</h2>
@@ -179,26 +187,17 @@
   </defs>
   </svg>
   
-  </div>
-  </section>
-</article>
-
-<!--VENTANA MODAL count-->
-<article class="count_screen" id="count_screen">
-  <section class="container">
-  
-  <div class="row justify-content-center">
-    
-    <span id="countdown2"></span>
-  </div>
+ 
 </section>
-</article>
+
+
+
 
 
 
 
   
-
+ 
     <script type="text/javascript" src="js/main.js"></script>
-  
+  </body>  
 </html>

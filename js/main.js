@@ -1,12 +1,14 @@
+
+
 //BOTÓN INSTRUCCIONES, ABRE INSTRUCCIONES
 function openInstruction(){
-    document.querySelector("#instructions").style.display="flex"
+    document.querySelector("#instructions").style.display="block"
 }
 document.getElementById("openInstructions").onclick=openInstruction
 //BOTÓN PLAY, ABRE VENTANA DE 321 Y JUEGO
 function openCount(){
     document.querySelector(".count_screen").style.display="flex"
-    var timeleft = 0;
+    var timeleft = 1;
       var downloadTimer = setInterval(function(){
         if(timeleft <= 0){
           clearInterval(downloadTimer);
@@ -30,6 +32,13 @@ function return_principlaScreen(){
 }
 document.querySelector("#return").onclick=return_principlaScreen
 
+
+let nombreJugador= document.querySelector("input[name='txtname']")
+
+document.querySelector(".play").onclick=()=>{
+    document.querySelector("#player_name").innerHTML="Puntuación " + nombreJugador.value +" : "
+}
+
 //Juego
 let jugador=document.querySelector("input[name='jugador']")
 let baraja=[]
@@ -48,20 +57,50 @@ for (let i=0;i<elementos.length;i++){
     
 }
 baraja = baraja.sort(()=>Math.random()-0.5)
-//console.log(baraja)
 
-let jugada = document.createElement("img")
-jugada.src = "./images/baraja/" + baraja[0].imagen
-cartaCentral.appendChild(jugada)
+let element = document.querySelectorAll(".e");
+let fantasma = document.querySelector(".fantasma");
+let jugada = document.createElement("img");
+let eBox= document.querySelector(".eBox");
+let puntos= document.querySelector("#points");
+let marcador=0;
+let monton=[];
+
+mostrarCarta()
+function mostrarCarta(){
+  jugada.src = "./images/baraja/" + baraja[0].imagen
+  cartaCentral.appendChild(jugada)
+}
+
+
 
 //Match - Coincidencia
-let e = document.querySelectorAll(".e")
-console.log(e)
-e[0].onclick=()=>console.log("haz hecho click en el fantasma")
-e[1].onclick=()=>console.log("haz hecho click en el libro")
-e[2].onclick=()=>console.log("haz hecho click en el botella")
-e[3].onclick=()=>console.log("haz hecho click en el raton")
-e[4].onclick=()=>console.log("haz hecho click en el sofa")
+
+eBox.onclick=(e)=>{
+  if(baraja[0].valor == e.target.classList[1]){
+    monton.push(baraja.shift())
+    mostrarCarta()
+    marcador++
+    sumaRestaPuntos(marcador)
+
+
+    console.log(baraja)
+    console.log("acertaste") }
+  else {
+    marcador--
+    sumaRestaPuntos(marcador)
+    console.log("no coincide")
+  }
+  console.log(e.target.classList[1])
+}
+
+function sumaRestaPuntos(punto){
+  puntos.innerHTML=punto
+}
+
+
+  
+
 
 
 //guardar jugador en local storage

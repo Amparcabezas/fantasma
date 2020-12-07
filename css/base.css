@@ -78,7 +78,7 @@ main {
 .lab {
   font-family: 'Fredericka the Great', cursive;
   font-size: 3em;
-  color: #000;
+  color: white;
 }
 
 .juPoints {
@@ -197,7 +197,8 @@ main {
 }
 
 body {
-  background-image: url("https://www.wallpaperup.com/uploads/wallpapers/2020/05/02/1376240/6ebe207e4e3ca934f18b5a0c1b3ec4fe.jpg");
+  background-image: url("../images/fondoBienvenida.jpg");
+  background-repeat: no-repeat;
 }
 
 .principal_screen {
