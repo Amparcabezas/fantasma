@@ -1,10 +1,9 @@
-
-
 //BOTÓN INSTRUCCIONES, ABRE INSTRUCCIONES
 function openInstruction(){
     document.querySelector("#instructions").style.display="block"
 }
 document.getElementById("openInstructions").onclick=openInstruction
+
 //BOTÓN PLAY, ABRE VENTANA DE 321 Y JUEGO
 function openCount(){
     document.querySelector(".count_screen").style.display="flex"
@@ -21,11 +20,15 @@ function openCount(){
       }, 1000);
 }
 document.getElementById("openPlay").onclick=openCount
+
+
 //BOTÓN HOME, VUELVE A HOME
 function openHome(){
     document.querySelector(".play_screen").style.display="none"
 }
 document.querySelector(".home").onclick=openHome
+
+
 //BOTÓN VOLVER, VUELVE A PANTALLA PRINCIPAL DESDE INTRUCCIONES
 function return_principlaScreen(){
     document.querySelector("#instructions").style.display="none"
@@ -39,11 +42,21 @@ document.querySelector(".play").onclick=()=>{
     document.querySelector("#player_name").innerHTML="Puntuación " + nombreJugador.value +" : "
 }
 
-//Juego
+
+
+
+//JUEGO
 let jugador=document.querySelector("input[name='jugador']")
 let baraja=[]
 let elementos = ["raton","sillon","fantasma","botella","libro"]
 let cartaCentral = document.querySelector(".cartaCentral")
+let element = document.querySelectorAll(".e");
+let fantasma = document.querySelector(".fantasma");
+let jugada = document.createElement("img");
+let eBox= document.querySelector(".eBox");
+let puntos= document.querySelector("#points");
+let marcador=0;
+let monton=[];
 
 for (let i=0;i<elementos.length;i++){
   //console.log(elementos[i])
@@ -58,20 +71,12 @@ for (let i=0;i<elementos.length;i++){
 }
 baraja = baraja.sort(()=>Math.random()-0.5)
 
-let element = document.querySelectorAll(".e");
-let fantasma = document.querySelector(".fantasma");
-let jugada = document.createElement("img");
-let eBox= document.querySelector(".eBox");
-let puntos= document.querySelector("#points");
-let marcador=0;
-let monton=[];
 
 mostrarCarta()
 function mostrarCarta(){
   jugada.src = "./images/baraja/" + baraja[0].imagen
   cartaCentral.appendChild(jugada)
 }
-
 
 
 //Match - Coincidencia
@@ -82,11 +87,13 @@ eBox.onclick=(e)=>{
     mostrarCarta()
     marcador++
     sumaRestaPuntos(marcador)
-
-
+    cambiarColor2()
     console.log(baraja)
     console.log("acertaste") }
+    
   else {
+    cambiarColor()   
+    
     marcador--
     sumaRestaPuntos(marcador)
     console.log("no coincide")
@@ -96,6 +103,23 @@ eBox.onclick=(e)=>{
 
 function sumaRestaPuntos(punto){
   puntos.innerHTML=punto
+}
+
+//cambiar color de fondo en error y acierto
+function cambiarColor(){
+  let fondo=document.querySelector(".play_screen")
+  if(fondo.style.backgroundColor = "rgb(131, 114, 89)"){
+    fondo.style.backgroundColor = "red";
+  }
+  //fondo.style.backgroundColor = fondo.style.backgroundColor == "rgb(131, 114, 89)" ? "red";
+ 
+}
+function cambiarColor2(){
+  let fondo=document.querySelector(".play_screen")
+  if(fondo.style.backgroundColor = "red"){
+    fondo.style.backgroundColor = "rgb(131, 114, 89)";
+  }
+
 }
 
 
