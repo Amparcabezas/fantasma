@@ -1,6 +1,7 @@
 .play_screen {
   background-image: url("../images/fondo.png");
   background-color: #837259;
+  font-family: 'Fredericka the Great', cursive;
   position: fixed;
   top: 0px;
   left: 0px;

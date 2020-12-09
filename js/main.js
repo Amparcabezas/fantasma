@@ -39,10 +39,12 @@ document.querySelector("#return").onclick=return_principlaScreen
 let nombreJugador= document.querySelector("input[name='txtname']")
 
 document.querySelector(".play").onclick=()=>{
-    document.querySelector("#player_name").innerHTML="Puntuación " + nombreJugador.value +" : "
+  secondPassed()
+  countdownTimer=setInterval('secondPassed()', 1000);
+  document.querySelector("#player_name").innerHTML="Puntuación " + nombreJugador.value +" : ";
+  
+  console.log(nombreJugador.value)
 }
-
-
 
 
 //JUEGO
@@ -57,6 +59,8 @@ let eBox= document.querySelector(".eBox");
 let puntos= document.querySelector("#points");
 let marcador=0;
 let monton=[];
+var seconds = 10;
+var countdownTimer;
 
 for (let i=0;i<elementos.length;i++){
   //console.log(elementos[i])
@@ -122,6 +126,27 @@ function cambiarColor2(){
 
 }
 
+//CUENTA ATRÁS PARTIDA
+
+function secondPassed() {
+   
+  var minutes = Math.round((seconds - 30)/60);
+  var remainingSeconds = seconds % 60;
+  if (remainingSeconds < 10) {
+     remainingSeconds = "0" + remainingSeconds; 
+  }
+  document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
+  if (seconds == 0) {
+   clearInterval(countdownTimer);
+   document.getElementById('countdown').innerHTML = "¡Se acabó tu tiempo!";
+   guardarPartida()
+  } else {
+   seconds--;
+  }
+  }
+   
+  
+
 
   
 
@@ -129,28 +154,13 @@ function cambiarColor2(){
 
 //guardar jugador en local storage
 function guardarPartida(){
-    let jugadasDe=JSON.parse(localStorage.getItem(jugador.value))
+  window.localStorage.setItem(nombreJugador.value,nombreJugador.value)
+    /*let jugadasDe=JSON.parse(localStorage.getItem(jugador.value))
     if(jugadasDe==null) jugadasDe=[]
     jugadasDe.push(jugada)
-    localStorage.setItem(jugador.value,JSON.stringify(jugadasDe))
+    localStorage.setItem(jugador.value,JSON.stringify(jugadasDe))*/
 }
-//CUENTA ATRÁS PARTIDA
-var seconds = 185;
-      function secondPassed() {
-      var minutes = Math.round((seconds - 30)/60);
-      var remainingSeconds = seconds % 60;
-      if (remainingSeconds < 10) {
-         remainingSeconds = "0" + remainingSeconds; 
-      }
-      document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
-      if (seconds == 0) {
-       clearInterval(countdownTimer);
-       document.getElementById('countdown').innerHTML = "¡Se acabó tu tiempo!";
-      } else {
-       seconds--;
-      }
-      }
-      var countdownTimer = setInterval('secondPassed()', 1000);
+
       
 
     
