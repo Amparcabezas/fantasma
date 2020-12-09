@@ -150,7 +150,9 @@ main {
           transform: none;
 }
 .instructions_screen {
-  background-image: url(https://previews.123rf.com/images/frenta/frenta1109/frenta110900001/10515217-fondo-de-halloween-vector-con-ara%C3%B1a-y-web.jpg);
+  background-image: url("../images/instrucciones.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -200,6 +202,8 @@ main {
 body {
   background-image: url("../images/fondoBienvenida.jpg");
   background-repeat: no-repeat;
+  background-size: 100%;
+  color: black;
 }
 
 .principal_screen {
