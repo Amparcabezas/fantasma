@@ -18,22 +18,18 @@
 body{
     background-image: url("../images/fondoBienvenida.jpg");
     background-repeat: no-repeat;
-    background-size:100%;
-    color: black;
-    
+    background-size:100% ;
+
     
 }
 
 
 .principal_screen{
-    
     justify-content: center;
     flex-direction: column;    
     display: flex;
     align-items: center;
-    
-    
-    
+        
 }
 
 .title_play{
