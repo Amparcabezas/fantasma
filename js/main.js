@@ -59,6 +59,7 @@ let eBox= document.querySelector(".eBox");
 let puntos= document.querySelector("#points");
 let marcador=0;
 let monton=[];
+let ranking=document.querySelector(".modal-ranking")
 var seconds = 10;
 var countdownTimer;
 
@@ -92,8 +93,7 @@ eBox.onclick=(e)=>{
     marcador++
     sumaRestaPuntos(marcador)
     cambiarColor2()
-    console.log(baraja)
-    console.log("acertaste") }
+ }
     
   else {
     cambiarColor()   
@@ -140,26 +140,29 @@ function secondPassed() {
    clearInterval(countdownTimer);
    document.getElementById('countdown').innerHTML = "¡Se acabó tu tiempo!";
    guardarPartida()
+    ranking.style.display="block"
   } else {
    seconds--;
   }
   }
-   
   
-
-
-  
-
 
 
 //guardar jugador en local storage
 function guardarPartida(){
-  window.localStorage.setItem(nombreJugador.value,nombreJugador.value)
+  partida={
+      jugador: nombreJugador.value,
+      puntuación: marcador
+  }
+
+  sessionStorage.setItem(nombreJugador.value,JSON.stringify(partida))
+console.log(partida)
+  }
+
     /*let jugadasDe=JSON.parse(localStorage.getItem(jugador.value))
     if(jugadasDe==null) jugadasDe=[]
     jugadasDe.push(jugada)
     localStorage.setItem(jugador.value,JSON.stringify(jugadasDe))*/
-}
 
       
 

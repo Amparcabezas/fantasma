@@ -19,7 +19,7 @@
 body{
     background-image: url("../images/fondoBienvenida.jpg");
     background-repeat: no-repeat;
-    background-size:100% ;
+    background-size:cover ;
 
     
 }
@@ -30,6 +30,7 @@ body{
     flex-direction: column;    
     display: flex;
     align-items: center;
+    height: 100vh;
         
 }
 
