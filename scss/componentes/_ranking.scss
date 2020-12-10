@@ -1,0 +1,32 @@
+.modal {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+  
+.modal .modal-container {
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+  }
+.puntos-jugador{
+    font-size:2rem;
+    border: 5px dotted orange;
+    border-radius:5px;
+    padding: 5px 20px;
+    background-color: #073763;
+    color:white;
+    margin-top: 3rem;
+}
+
+.ranking-general{
+  font-size: 1.5rem;
+  border: 5px dotted  #073763;
+  border-radius:5px;
+  padding: 5px 20px;
+  background-color:#399271;
+  color:white;
+  margin-top: 1.75rem;
+}
