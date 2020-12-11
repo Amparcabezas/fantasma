@@ -48,10 +48,10 @@ document.querySelector(".play").onclick=()=>{
 
 
 //JUEGO
-let jugador=document.querySelector("input[name='jugador']")
-let baraja=[]
-let elementos = ["raton","sillon","fantasma","botella","libro"]
-let cartaCentral = document.querySelector(".cartaCentral")
+let jugador=document.querySelector("input[name='jugador']");
+let baraja=[];
+let elementos = ["raton","sillon","fantasma","botella","libro"];
+let cartaCentral = document.querySelector(".cartaCentral");
 let element = document.querySelectorAll(".e");
 let fantasma = document.querySelector(".fantasma");
 let jugada = document.createElement("img");
@@ -59,9 +59,11 @@ let eBox= document.querySelector(".eBox");
 let puntos= document.querySelector("#points");
 let marcador=0;
 let monton=[];
-var seconds = 10;
+let ranking=document.querySelector(".modal-ranking");
+var seconds = 5;
 var countdownTimer;
-let ranking =document.querySelector(".modal-ranking")
+let puntosJugador=document.querySelector("#puntosJugador");
+let objSession=[]
 
 for (let i=0;i<elementos.length;i++){
   //console.log(elementos[i])
@@ -93,16 +95,16 @@ eBox.onclick=(e)=>{
     marcador++
     sumaRestaPuntos(marcador)
     cambiarColor2()
-    console.log(baraja)
-    console.log("acertaste") }
+ }
     
   else {
     cambiarColor()   
+    
     marcador--
     sumaRestaPuntos(marcador)
     console.log("no coincide")
   }
-  
+  console.log(e.target.classList[1])
 }
 
 function sumaRestaPuntos(punto){
@@ -115,6 +117,7 @@ function cambiarColor(){
   if(fondo.style.backgroundColor = "rgb(131, 114, 89)"){
     fondo.style.backgroundColor = "red";
   }
+  //fondo.style.backgroundColor = fondo.style.backgroundColor == "rgb(131, 114, 89)" ? "red";
  
 }
 function cambiarColor2(){
@@ -145,9 +148,15 @@ function secondPassed() {
   }
   }
 
-function apareceRanking(){  
-  ranking.style.display="flex"  
+  function apareceRanking(){  
+    ranking.style.display="flex"  
+    puntosJugador.innerHTML="Tu puntuación es: " + marcador
+    objSession=JSON.parse(localStorage.getItem("partidas"))
+    console.log(objSession)
+
 }
+  
+
 
 //guardar jugador en local storage
 function guardarPartida(){
@@ -155,14 +164,10 @@ function guardarPartida(){
       jugador: nombreJugador.value,
       puntuación: marcador
   }
+  objSession.push(partida)
+  localStorage.setItem("partidas",JSON.stringify(objSession))
+}
 
-  sessionStorage.setItem(nombreJugador.value,JSON.stringify(partida))
-console.log(partida)
-  }
-
-
-
-      
-
-    
+     
+  
 
