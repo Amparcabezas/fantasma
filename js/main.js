@@ -59,9 +59,9 @@ let eBox= document.querySelector(".eBox");
 let puntos= document.querySelector("#points");
 let marcador=0;
 let monton=[];
-let ranking=document.querySelector(".modal-ranking")
 var seconds = 10;
 var countdownTimer;
+let ranking =document.querySelector(".modal-ranking")
 
 for (let i=0;i<elementos.length;i++){
   //console.log(elementos[i])
@@ -93,16 +93,16 @@ eBox.onclick=(e)=>{
     marcador++
     sumaRestaPuntos(marcador)
     cambiarColor2()
- }
+    console.log(baraja)
+    console.log("acertaste") }
     
   else {
     cambiarColor()   
-    
     marcador--
     sumaRestaPuntos(marcador)
     console.log("no coincide")
   }
-  console.log(e.target.classList[1])
+  
 }
 
 function sumaRestaPuntos(punto){
@@ -115,7 +115,6 @@ function cambiarColor(){
   if(fondo.style.backgroundColor = "rgb(131, 114, 89)"){
     fondo.style.backgroundColor = "red";
   }
-  //fondo.style.backgroundColor = fondo.style.backgroundColor == "rgb(131, 114, 89)" ? "red";
  
 }
 function cambiarColor2(){
@@ -140,13 +139,15 @@ function secondPassed() {
    clearInterval(countdownTimer);
    document.getElementById('countdown').innerHTML = "¡Se acabó tu tiempo!";
    guardarPartida()
-    ranking.style.display="block"
+   apareceRanking()
   } else {
    seconds--;
   }
   }
-  
 
+function apareceRanking(){  
+  ranking.style.display="flex"  
+}
 
 //guardar jugador en local storage
 function guardarPartida(){
@@ -159,10 +160,7 @@ function guardarPartida(){
 console.log(partida)
   }
 
-    /*let jugadasDe=JSON.parse(localStorage.getItem(jugador.value))
-    if(jugadasDe==null) jugadasDe=[]
-    jugadasDe.push(jugada)
-    localStorage.setItem(jugador.value,JSON.stringify(jugadasDe))*/
+
 
       
 
