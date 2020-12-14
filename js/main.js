@@ -55,7 +55,7 @@ document.querySelector("body").onload=()=>{
     //hay datos en local storage
     objSession=JSON.parse(jugadoresAntiguos)
   }
-  console.log(objSession)
+  //console.log(objSession)
 
 }
 
@@ -77,6 +77,8 @@ var seconds = 5;
 var countdownTimer;
 let puntosJugador=document.querySelector("#puntosJugador");
 let objSession=[]
+let listaPuntajes = document.querySelector(".puntuacion")
+let puestoJugador = document.querySelector("#puestoJugador")
 
 for (let i=0;i<elementos.length;i++){
   //console.log(elementos[i])
@@ -115,9 +117,7 @@ eBox.onclick=(e)=>{
     
     marcador--
     sumaRestaPuntos(marcador)
-    console.log("no coincide")
   }
-  console.log(e.target.classList[1])
 }
 
 function sumaRestaPuntos(punto){
@@ -144,7 +144,6 @@ function cambiarColor2(){
 //CUENTA ATRÁS PARTIDA
 
 function secondPassed() {
-   
   var minutes = Math.round((seconds - 30)/60);
   var remainingSeconds = seconds % 60;
   if (remainingSeconds < 10) {
@@ -152,23 +151,30 @@ function secondPassed() {
   }
   document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
   if (seconds == 0) {
-   clearInterval(countdownTimer);
-   document.getElementById('countdown').innerHTML = "¡Se acabó tu tiempo!";
-   guardarPartida()
-   //objSession.sort(compare)
-   apareceRanking()
-
+    clearInterval(countdownTimer);
+    document.getElementById('countdown').innerHTML = "¡Se acabó tu tiempo!";
+    guardarPartida()
+    apareceRanking()
   } else {
-   seconds--;
+    seconds--;
   }
-  }
+}
 
-  function apareceRanking(){  
+function apareceRanking(){  
+  let prueba = objSession
+    prueba.sort((a, b) => (b.puntuacion - a.puntuacion))
+    const index = prueba.findIndex(j => j.jugador === nombreJugador.value);
+
+      prueba.forEach((r,i) => {
+        listaPuntajes.innerHTML+="<div>"+(i+1)+". "+ r.jugador+": "+"<span class='destacar'>"+r.puntuacion+"</span></div>"
+      });
+    
     ranking.style.display="flex"  
     puntosJugador.innerHTML="Tu puntuación es: " + marcador
+    console.log(prueba)
+    puestoJugador.innerHTML="Tu puesto en el Ranking es: " + (index+1)
     objSession=JSON.parse(localStorage.getItem("partidas"))
-    console.log(objSession)
-
+    
 }
   
 
@@ -182,29 +188,3 @@ function guardarPartida(){
   objSession.push(partida)
   localStorage.setItem("partidas",JSON.stringify(objSession))
 }
-
- /*    
-function ordenPuntuacion(){
- objSession.forEach(j=>{
- //  j.puntuacion.sort((a, b) => a - b);
- console.log(objSession[0].partida.puntuacion)
- })
-
-}
-*/
-/*
-function compare(a, b) {
-  // Use toUpperCase() to ignore character casing
-  const bandA = a.band.toUpperCase();
-  const bandB = b.band.toUpperCase();
-
-  let comparison = 0;
-  if (bandA > bandB) {
-    comparison = 1;
-  } else if (bandA < bandB) {
-    comparison = -1;
-  }
-  return comparison;
-}
-
-*/
