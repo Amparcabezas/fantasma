@@ -45,6 +45,19 @@ document.querySelector(".play").onclick=()=>{
   
   console.log(nombreJugador.value)
 }
+//Recupera datos del LocalStorage si los hay.
+document.querySelector("body").onload=()=>{
+  let jugadoresAntiguos=localStorage.getItem("partidas")
+  if(jugadoresAntiguos==undefined){
+    //no hay nada
+     objSession=[]
+  }else{
+    //hay datos en local storage
+    objSession=JSON.parse(jugadoresAntiguos)
+  }
+  console.log(objSession)
+
+}
 
 
 //JUEGO
@@ -142,7 +155,9 @@ function secondPassed() {
    clearInterval(countdownTimer);
    document.getElementById('countdown').innerHTML = "¡Se acabó tu tiempo!";
    guardarPartida()
+   //objSession.sort(compare)
    apareceRanking()
+
   } else {
    seconds--;
   }
@@ -162,12 +177,34 @@ function secondPassed() {
 function guardarPartida(){
   partida={
       jugador: nombreJugador.value,
-      puntuación: marcador
+      puntuacion: marcador
   }
   objSession.push(partida)
   localStorage.setItem("partidas",JSON.stringify(objSession))
 }
 
-     
-  
+ /*    
+function ordenPuntuacion(){
+ objSession.forEach(j=>{
+ //  j.puntuacion.sort((a, b) => a - b);
+ console.log(objSession[0].partida.puntuacion)
+ })
 
+}
+*/
+/*
+function compare(a, b) {
+  // Use toUpperCase() to ignore character casing
+  const bandA = a.band.toUpperCase();
+  const bandB = b.band.toUpperCase();
+
+  let comparison = 0;
+  if (bandA > bandB) {
+    comparison = 1;
+  } else if (bandA < bandB) {
+    comparison = -1;
+  }
+  return comparison;
+}
+
+*/
