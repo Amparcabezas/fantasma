@@ -25,6 +25,7 @@ document.getElementById("openPlay").onclick=openCount
 //BOTÓN HOME, VUELVE A HOME
 function openHome(){
     document.querySelector(".play_screen").style.display="none"
+    
 }
 document.querySelector(".home").onclick=openHome
 
@@ -43,7 +44,6 @@ document.querySelector(".play").onclick=()=>{
   countdownTimer=setInterval('secondPassed()', 1000);
   document.querySelector("#player_name").innerHTML="Puntuación " + nombreJugador.value +" : ";
   
-  console.log(nombreJugador.value)
 }
 //Recupera datos del LocalStorage si los hay.
 document.querySelector("body").onload=()=>{
@@ -73,12 +73,14 @@ let puntos= document.querySelector("#points");
 let marcador=0;
 let monton=[];
 let ranking=document.querySelector(".modal-ranking");
-var seconds = 30;
+var seconds = 6;
 var countdownTimer;
 let puntosJugador=document.querySelector("#puntosJugador");
 let objSession=[]
 let listaPuntajes = document.querySelector(".puntuacion")
-let puestoJugador = document.querySelector("#puestoJugador")
+let puestoJugador = document.querySelector("#puestoJugador");
+let fecha=new Date();
+let fechaJugada=fecha.toLocaleDateString()
 
 for (let i=0;i<elementos.length;i++){
   //console.log(elementos[i])
@@ -167,17 +169,20 @@ function secondPassed() {
 function apareceRanking(){  
   let prueba = objSession
     prueba.sort((a, b) => (b.puntuacion - a.puntuacion))
-    const index = prueba.findIndex(j => j.jugador === nombreJugador.value);
-
-      prueba.forEach((r,i) => {
-        listaPuntajes.innerHTML+="<div>"+(i+1)+". "+ r.jugador+": "+"<span class='destacar'>"+r.puntuacion+"</span></div>"
-      });
     
-    ranking.style.display="flex"  
-    puntosJugador.innerHTML="Tu puntuación es: " + marcador
-    console.log(prueba)
-    puestoJugador.innerHTML="Tu puesto en el Ranking es: " + (index+1)
-    objSession=JSON.parse(localStorage.getItem("partidas"))
+    const index = prueba.findIndex(j => j.fecha.getSeconds==fecha.getSeconds);
+      
+    
+      prueba.forEach((r,i) => {
+        if(i<10){
+          listaPuntajes.innerHTML+="<div>"+(i+1)+". "+ r.jugador+": "+"<span class='destacar'>"+r.puntuacion+" puntos "+"("+fechaJugada+")"+"</span></div>"
+        }     
+      });
+          
+    ranking.style.display="flex";
+    puntosJugador.innerHTML="Tu puntuación es: " + marcador;
+    puestoJugador.innerHTML="Tu puesto en el Ranking es: " + (index+1);
+    objSession=JSON.parse(localStorage.getItem("partidas"));
       
 }
 
@@ -185,8 +190,10 @@ function apareceRanking(){
 function guardarPartida(){
   partida={
       jugador: nombreJugador.value,
-      puntuacion: marcador
+      puntuacion: marcador,
+      fecha: new Date()
   }
+  fecha= new Date()
   objSession.push(partida)
   localStorage.setItem("partidas",JSON.stringify(objSession))
 }
