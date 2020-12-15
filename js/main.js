@@ -73,7 +73,7 @@ let puntos= document.querySelector("#points");
 let marcador=0;
 let monton=[];
 let ranking=document.querySelector(".modal-ranking");
-var seconds = 5;
+var seconds = 30;
 var countdownTimer;
 let puntosJugador=document.querySelector("#puntosJugador");
 let objSession=[]
@@ -104,19 +104,23 @@ function mostrarCarta(){
 //Match - Coincidencia
 
 eBox.onclick=(e)=>{
+ console.log(e.target.id)
+
   if(baraja[0].valor == e.target.classList[1]){
     monton.push(baraja.shift())
     mostrarCarta()
     marcador++
     sumaRestaPuntos(marcador)
     cambiarColor2()
- }
+    element.forEach(e=>e.classList.remove("logo"))
     
+ }
   else {
     cambiarColor()   
-    
     marcador--
     sumaRestaPuntos(marcador)
+    document.getElementById(e.target.id).classList.add("logo")
+  
   }
 }
 
@@ -174,10 +178,8 @@ function apareceRanking(){
     console.log(prueba)
     puestoJugador.innerHTML="Tu puesto en el Ranking es: " + (index+1)
     objSession=JSON.parse(localStorage.getItem("partidas"))
-    
+      
 }
-  
-
 
 //guardar jugador en local storage
 function guardarPartida(){
