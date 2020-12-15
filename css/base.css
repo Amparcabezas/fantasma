@@ -22,10 +22,8 @@ header {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding: 15px;
-  top: 0;
+  padding: 1px;
   width: 100%;
-  height: 20%;
 }
 
 button {
@@ -45,8 +43,16 @@ main {
           justify-content: center;
 }
 
+#ajustePantalla {
+  margin-top: -45px;
+}
+
+.eBox {
+  margin: 0px 50px;
+}
+
 .e {
-  height: 150px;
+  height: 100px;
   width: auto;
 }
 
@@ -63,28 +69,28 @@ main {
   margin-top: -80px;
 }
 
-.cartaCentral {
-  margin-top: -80px;
+.ajusteCarta {
+  margin: -80px 0px;
 }
 
 .timer {
-  font-size: 40px;
-  border: 5px solid orange;
-  border-radius: 5px;
-  padding: 5px 20px;
+  font-size: 30px;
+  border: 3px solid orange;
+  border-radius: 30px;
   background-color: #399271;
   color: white;
+  padding: 10px;
+  margin-top: 5px;
 }
 
 .lab {
   font-family: 'Fredericka the Great', cursive;
-  font-size: 3em;
+  font-size: 2em;
   color: white;
 }
 
 .juPoints {
   position: relative;
-  padding-top: 30px;
 }
 
 .logo {
@@ -126,7 +132,7 @@ main {
   line-height: 1;
   border-radius: 1em;
   position: relative;
-  min-width: 8.23em;
+  min-width: 5.23em;
   text-decoration: none;
   font-family: var(--font);
   font-size: 1.25rem;
@@ -199,6 +205,10 @@ main {
   padding: 20px;
 }
 
+#ajustesInstrucciones {
+  margin-top: 50px;
+}
+
 .count_screen {
   background-color: #306e3f;
   position: fixed;
@@ -257,10 +267,11 @@ main {
 body {
   background-image: url("../images/fondoBienvenida.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
 }
 
 .principal_screen {
+  height: 100vh;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -352,6 +363,6 @@ input {
   background: white;
   color: #073763;
   border-radius: 5px;
-  font-size: 3em;
+  font-size: 20px;
 }
 /*# sourceMappingURL=base.css.map */

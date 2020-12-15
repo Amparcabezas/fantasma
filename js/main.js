@@ -73,7 +73,7 @@ let puntos= document.querySelector("#points");
 let marcador=0;
 let monton=[];
 let ranking=document.querySelector(".modal-ranking");
-var seconds = 50;
+var seconds = 5;
 var countdownTimer;
 let puntosJugador=document.querySelector("#puntosJugador");
 let objSession=[]
@@ -158,7 +158,7 @@ function secondPassed() {
   document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
   if (seconds == 0) {
     clearInterval(countdownTimer);
-    document.getElementById('countdown').innerHTML = "¡Se acabó tu tiempo!";
+    document.getElementById('countdown').innerHTML = "TimeOut";
     guardarPartida()
     apareceRanking()
   } else {

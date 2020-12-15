@@ -19,13 +19,14 @@
 body{
     background-image: url("../images/fondoBienvenida.jpg");
     background-repeat: no-repeat;
-    background-size:100% ;
+    background-size:cover ;
 
     
 }
 
 
 .principal_screen{
+    height: 100vh;
     justify-content: center;
     flex-direction: column;    
     display: flex;
@@ -99,6 +100,6 @@ input{
     background: white;
     color: #073763;
     border-radius: 5px;
-    font-size: 3em;
+    font-size: 20px;
 }
 
