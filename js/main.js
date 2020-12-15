@@ -73,7 +73,7 @@ let puntos= document.querySelector("#points");
 let marcador=0;
 let monton=[];
 let ranking=document.querySelector(".modal-ranking");
-var seconds = 6;
+var seconds = 50;
 var countdownTimer;
 let puntosJugador=document.querySelector("#puntosJugador");
 let objSession=[]
