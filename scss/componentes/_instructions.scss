@@ -1,5 +1,4 @@
 .instructions_screen {
-    background-image:url("../images/intrucciones2.jpg");
     background-repeat: no-repeat;
     background-size:100% 100%;
     top: 0px;
@@ -10,6 +9,7 @@
     color: #000;
     display: none;
     align-items: center;
+    overflow-y:scroll;
   }
 .titleInstructions{
     background-color:#073763 ;
@@ -20,9 +20,10 @@
 } 
 
 .explicacion_instrucciones{
-    background-color: rgba(255, 255, 255, 0.589);
+    background-color: rgba(255, 255, 255, 0.849);
     border: 3px solid #399271;
     border-radius: 10px;
+    height: 100%vh;
     
     
 }
@@ -32,24 +33,40 @@
     padding: 7px;
 }
 
+
+
 .subtitulo-inst{
     font-weight: 600;
 }
 .obj{
-    height: 100px;
-    justify-content: space-around;
+    width: 120%;
+    
 }
 .obj-centrar{
     align-items: center;
     justify-content: center;
+    .col-4{
+        display: inline-flex;
+        justify-content: center;
+    }
 }
-.obj-carta{
-    height: 100vh;
-    width: 32%;
+.ejemplo{
+    
+    background-color: #0737635d;
+    .col-4{
+        display: inline-flex;
+        width: 30%;
+        justify-content: center;
+    }
+    .obj-carta{
+        width: 100px;
+    }
 }
 
 .flechaObj{
     width: 32%;
-    height: 100px;
-    padding-left: 25px;
+    height: 50px; 
+}
+.captura{
+    width: 120%;
 }

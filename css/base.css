@@ -82,6 +82,18 @@ main {
   -webkit-animation: tiembla 0.1s infinite;
 }
 
+@keyframes tiembla {
+  0% {
+    transform: rotateZ(-5deg);
+  }
+  50% {
+    transform: rotateZ(-1deg);
+  }
+  100% {
+    transform: rotateZ(5deg);
+  }
+}
+
 .cartaCentral > img {
   width: 160px;
 }
@@ -187,7 +199,6 @@ main {
   transform: none;
 }
 .instructions_screen {
-  background-image: url("../images/intrucciones2.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   top: 0px;
@@ -198,6 +209,7 @@ main {
   color: #000;
   display: none;
   align-items: center;
+  overflow-y: scroll;
 }
 
 .titleInstructions {
@@ -208,9 +220,10 @@ main {
 }
 
 .explicacion_instrucciones {
-  background-color: rgba(255, 255, 255, 0.589);
+  background-color: rgba(255, 255, 255, 0.849);
   border: 3px solid #399271;
   border-radius: 10px;
+  height: 100%vh;
 }
 
 .texto {
@@ -224,8 +237,7 @@ main {
 }
 
 .obj {
-  height: 100px;
-  justify-content: space-around;
+  width: 120%;
 }
 
 .obj-centrar {
@@ -233,15 +245,32 @@ main {
   justify-content: center;
 }
 
-.obj-carta {
-  height: 100vh;
-  width: 32%;
+.obj-centrar .col-4 {
+  display: inline-flex;
+  justify-content: center;
+}
+
+.ejemplo {
+  background-color: #0737635d;
+}
+
+.ejemplo .col-4 {
+  display: inline-flex;
+  width: 30%;
+  justify-content: center;
+}
+
+.ejemplo .obj-carta {
+  width: 100px;
 }
 
 .flechaObj {
   width: 32%;
-  height: 100px;
-  padding-left: 25px;
+  height: 50px;
+}
+
+.captura {
+  width: 120%;
 }
 
 .count_screen {
