@@ -10,7 +10,7 @@ let puntos= document.querySelector("#points");
 let marcador=0;
 let monton=[];
 let ranking=document.querySelector(".modal-ranking");
-let seconds = 20;
+let seconds = 7;
 let timeleft=3;
 let countdownTimer;
 let downloadTimer;
@@ -186,7 +186,8 @@ function apareceRanking(){
   let prueba = objSession
     prueba.sort((a, b) => (b.puntuacion - a.puntuacion))
     
-    const index = prueba.findIndex(j => j.fecha.getSeconds==fecha.getSeconds);
+    
+    const index = prueba.findIndex(j =>j.fecha.getSeconds==fecha.getSeconds);
       
     
       prueba.forEach((r,i) => {
