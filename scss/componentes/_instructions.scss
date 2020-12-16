@@ -1,5 +1,5 @@
 .instructions_screen {
-    background-image:url("../images/instrucciones.jpg");
+    background-image:url("../images/intrucciones2.jpg");
     background-repeat: no-repeat;
     background-size:100% 100%;
     top: 0px;
@@ -15,27 +15,40 @@
     background-color:#073763 ;
     border: 3px solid #ff7400;
     color: white;
-    
-    
+    border-radius: 10px;
     
 } 
 
 .explicacion_instrucciones{
-    height: 300px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.589);
     border: 3px solid #399271;
-  
-    
+    border-radius: 10px;
     
     
 }
 .texto{
     color:#073763;
-    font-weight: bold;
-    padding: 20px;
+    font-size: 1.1em;
+    padding: 7px;
 }
 
-#ajustesInstrucciones{
-    margin-top: 50px;
+.subtitulo-inst{
+    font-weight: 600;
 }
-
+.obj{
+    height: 100px;
+    justify-content: space-around;
+}
+.obj-centrar{
+    align-items: center;
+    justify-content: center;
+}
+.obj-carta{
+    height: 190px;
+    width: 32%;
+}
+.flechaObj{
+    width: 32%;
+    height: 100px;
+    padding-left: 25px;
+}
