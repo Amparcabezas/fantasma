@@ -26,8 +26,14 @@
     min-width: 5.23em;
     text-decoration: none;
     font-family: var(--font);
-    font-size: 1.25rem;
+    font-size: 1.00rem;
+    &.home{
+      height: 20px;
+      display:flex;
+      align-items: center;
+    }
   }
+
   
   .button:before,
   .button:after {

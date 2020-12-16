@@ -40,14 +40,15 @@ button{
 }
 
 
+
+
 main{
     display: flex;
     align-items: center;
     justify-content: center;
-
-    
-    
+    height: 100%;
 }
+
 #ajustePantalla{
   margin-top: -45px;
 }
@@ -116,3 +117,47 @@ justify-content: space-between;
     50% { -webkit-transform:rotateZ( -1deg); }
     100%{ -webkit-transform:rotateZ( 5deg); }
   }
+
+
+.cartaCentral>img{
+  width: 160px;
+}
+
+
+@media (min-width: 320px) and (max-width: 425px) {
+  .cartaCentral>img{
+    width: 160px;
+  }
+}
+@media (min-width: 426px) and (max-width: 767px) {
+  .cartaCentral>img{
+    width: 120px;
+  }
+}
+@media (min-width: 768px)and (max-width: 1023px) {
+  .cartaCentral>img{
+    width: 160px;
+     }
+  .e{
+    height: 150px;
+    width: auto;
+  }
+}
+
+@media (min-width: 1023px){
+  .cartaCentral>img{
+    width: 100px;
+     }
+  .e{
+    height: 100px;
+    width: auto;
+    
+  }
+}
+
+
+@media (min-width: 1023px){
+  .rowElements1, .rowElements2 {
+    justify-content: space-around;
+  }
+}

@@ -41,6 +41,7 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: 100%;
 }
 
 #ajustePantalla {
@@ -109,6 +110,49 @@ main {
   }
 }
 
+.cartaCentral > img {
+  width: 160px;
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+  .cartaCentral > img {
+    width: 160px;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 767px) {
+  .cartaCentral > img {
+    width: 120px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .cartaCentral > img {
+    width: 160px;
+  }
+  .e {
+    height: 150px;
+    width: auto;
+  }
+}
+
+@media (min-width: 1023px) {
+  .cartaCentral > img {
+    width: 100px;
+  }
+  .e {
+    height: 100px;
+    width: auto;
+  }
+}
+
+@media (min-width: 1023px) {
+  .rowElements1, .rowElements2 {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
 :root {
   --bg: black;
   --color: white;
@@ -135,7 +179,17 @@ main {
   min-width: 5.23em;
   text-decoration: none;
   font-family: var(--font);
-  font-size: 1.25rem;
+  font-size: 1.00rem;
+}
+
+.button.home {
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .button:before,
@@ -214,12 +268,15 @@ main {
   position: fixed;
   top: 0px;
   left: 0px;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-size: 100% 100%;
   color: orange;
   font-size: 300px;

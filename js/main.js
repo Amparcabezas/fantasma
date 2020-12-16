@@ -1,66 +1,3 @@
-//BOTÓN INSTRUCCIONES, ABRE INSTRUCCIONES
-function openInstruction(){
-    document.querySelector("#instructions").style.display="block"
-}
-document.getElementById("openInstructions").onclick=openInstruction
-
-//BOTÓN PLAY, ABRE VENTANA DE 321 Y JUEGO
-function openCount(){
-    document.querySelector(".count_screen").style.display="flex"
-    var timeleft = 1;
-      var downloadTimer = setInterval(function(){
-        if(timeleft <= 0){
-          clearInterval(downloadTimer);
-          document.querySelector("#play").style.display="block";
-          document.querySelector(".count_screen").style.display="none";
-        } else {
-          document.getElementById("countdown2").innerHTML = timeleft;
-        }
-        timeleft -= 1;
-      }, 1000);
-}
-document.getElementById("openPlay").onclick=openCount
-
-
-//BOTÓN HOME, VUELVE A HOME
-function openHome(){
-    document.querySelector(".play_screen").style.display="none"
-    
-}
-document.querySelector(".home").onclick=openHome
-
-
-//BOTÓN VOLVER, VUELVE A PANTALLA PRINCIPAL DESDE INTRUCCIONES
-function return_principlaScreen(){
-    document.querySelector("#instructions").style.display="none"
-}
-document.querySelector("#return").onclick=return_principlaScreen
-
-
-let nombreJugador= document.querySelector("input[name='txtname']")
-
-document.querySelector(".play").onclick=()=>{
-  secondPassed()
-  countdownTimer=setInterval('secondPassed()', 1000);
-  document.querySelector("#player_name").innerHTML="Puntuación " + nombreJugador.value +" : ";
-  
-}
-//Recupera datos del LocalStorage si los hay.
-document.querySelector("body").onload=()=>{
-  let jugadoresAntiguos=localStorage.getItem("partidas")
-  if(jugadoresAntiguos==undefined){
-    //no hay nada
-     objSession=[]
-  }else{
-    //hay datos en local storage
-    objSession=JSON.parse(jugadoresAntiguos)
-  }
-  //console.log(objSession)
-
-}
-
-
-//JUEGO
 let jugador=document.querySelector("input[name='jugador']");
 let baraja=[];
 let elementos = ["raton","sillon","fantasma","botella","libro"];
@@ -73,30 +10,109 @@ let puntos= document.querySelector("#points");
 let marcador=0;
 let monton=[];
 let ranking=document.querySelector(".modal-ranking");
-var seconds = 5;
-var countdownTimer;
+let seconds = 20;
+let timeleft=3;
+let countdownTimer;
+let downloadTimer;
 let puntosJugador=document.querySelector("#puntosJugador");
 let objSession=[]
 let listaPuntajes = document.querySelector(".puntuacion")
 let puestoJugador = document.querySelector("#puestoJugador");
 let fecha=new Date();
 let fechaJugada=fecha.toLocaleDateString()
+let nombreJugador= document.querySelector("input[name='txtname']")
 
-for (let i=0;i<elementos.length;i++){
-  //console.log(elementos[i])
-  for (let j=1; j<9; j++){
-    let carta={
-        valor:elementos[i],
-        imagen: elementos[i]+j+".svg",
-    }
-    baraja.push(carta)
-  }
-    
+
+
+//BOTÓN INSTRUCCIONES, ABRE INSTRUCCIONES
+function openInstruction(){
+    document.querySelector("#instructions").style.display="block"
 }
-baraja = baraja.sort(()=>Math.random()-0.5)
+document.getElementById("openInstructions").onclick=openInstruction
+
+//BOTÓN PLAY, ABRE VENTANA DE 321 Y JUEGO
+function openCount(){
+    document.querySelector(".count_screen").style.display="flex"
+    console.log(timeleft)
+      downloadTimer = setInterval(function(){
+        if(timeleft <= 0){
+          clearInterval(downloadTimer);
+          document.querySelector("#play").style.display="block";
+          document.querySelector(".count_screen").style.display="none";
+          document.getElementById("countdown2").innerHTML = "";
+        } else {
+          document.getElementById("countdown2").innerHTML = timeleft;
+        }
+        timeleft -= 1;
+      }, 1000);
+}
+document.getElementById("openPlay").onclick=openCount
 
 
-mostrarCarta()
+//BOTÓN HOME, VUELVE A HOME
+function resetGameAndGoHome(){
+    document.querySelector(".play_screen").style.display="none";
+    clearInterval(countdownTimer)
+    clearInterval(downloadTimer)
+    seconds=20;
+    timeleft=3;
+    
+       
+}
+document.querySelector(".home").onclick=resetGameAndGoHome
+
+
+//BOTÓN VOLVER, VUELVE A PANTALLA PRINCIPAL DESDE INTRUCCIONES
+function return_principlaScreen(){
+    document.querySelector("#instructions").style.display="none"
+}
+document.querySelector("#return").onclick=return_principlaScreen
+
+
+
+
+document.querySelector(".play").onclick=()=>{
+  
+  countdownTimer=setInterval('secondPassed()', 1000);
+  document.querySelector("#player_name").innerHTML="Puntuación " + nombreJugador.value +" : ";
+  
+}
+//Recupera datos del LocalStorage si los hay.
+document.querySelector("body").onload=()=>{
+  createCards()
+  mostrarCarta()
+
+  let jugadoresAntiguos=localStorage.getItem("partidas")
+  if(jugadoresAntiguos==undefined){
+    //no hay nada
+     objSession=[]
+  }else{
+    //hay datos en local storage
+    objSession=JSON.parse(jugadoresAntiguos)
+  }
+  
+
+}
+
+
+function createCards(){
+  for (let i=0;i<elementos.length;i++){
+    //console.log(elementos[i])
+    for (let j=1; j<9; j++){
+      let carta={
+          valor:elementos[i],
+          imagen: elementos[i]+j+".svg",
+      }
+      baraja.push(carta)
+    }
+      
+  }
+  baraja = baraja.sort(()=>Math.random()-0.5)
+}
+
+
+
+
 function mostrarCarta(){
   jugada.src = "./images/baraja/" + baraja[0].imagen
   cartaCentral.appendChild(jugada)
@@ -105,10 +121,10 @@ function mostrarCarta(){
 
 //Match - Coincidencia
 
-eBox.onclick=(e)=>{
- console.log(e.target.id)
-
-  if(baraja[0].valor == e.target.classList[1]){
+eBox.onclick = matchCards;
+function matchCards(e){
+  console.log(baraja)
+   if(baraja[0].valor == e.target.classList[1]){
     monton.push(baraja.shift())
     mostrarCarta()
     marcador++
@@ -136,7 +152,7 @@ function cambiarColor(){
   if(fondo.style.backgroundColor = "rgb(131, 114, 89)"){
     fondo.style.backgroundColor = "red";
   }
-  //fondo.style.backgroundColor = fondo.style.backgroundColor == "rgb(131, 114, 89)" ? "red";
+
  
 }
 function cambiarColor2(){
@@ -150,8 +166,8 @@ function cambiarColor2(){
 //CUENTA ATRÁS PARTIDA
 
 function secondPassed() {
-  var minutes = Math.round((seconds - 30)/60);
-  var remainingSeconds = seconds % 60;
+  let minutes = Math.round((seconds - 30)/60);
+  let remainingSeconds = seconds % 60;
   if (remainingSeconds < 10) {
      remainingSeconds = "0" + remainingSeconds; 
   }
