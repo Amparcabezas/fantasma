@@ -1,26 +1,25 @@
-let jugador=document.querySelector("input[name='jugador']");
-let baraja=[];
-let elementos = ["raton","sillon","fantasma","botella","libro"];
-let cartaCentral = document.querySelector(".cartaCentral");
+let player=document.querySelector("input[name='player']");
+let cards=[];
+let elements = ["raton","sillon","fantasma","botella","libro"];
+let centralCard = document.querySelector(".centralCard");
 let element = document.querySelectorAll(".e");
-let fantasma = document.querySelector(".fantasma");
-let jugada = document.createElement("img");
+let play = document.createElement("img");
 let eBox= document.querySelector(".eBox");
-let puntos= document.querySelector("#points");
-let marcador=0;
-let monton=[];
+let points= document.querySelector("#points");//points
+let score=0;
+let trush=[];
 let ranking=document.querySelector(".modal-ranking");
 let seconds = 25;
 let timeleft=3;
 let countdownTimer;
 let downloadTimer;
-let puntosJugador=document.querySelector("#puntosJugador");
-let objSession=[]
-let listaPuntajes = document.querySelector(".puntuacion")
-let puestoJugador = document.querySelector("#puestoJugador");
-let fecha=new Date();
-let fechaJugada=fecha.toLocaleDateString()
-let nombreJugador= document.querySelector("input[name='txtname']")
+let pointsplayer=document.querySelector("#pointsplayer");//pointsjugador
+let playersHistory=[]
+let pointList = document.querySelector(".puntuation")
+let playerPosition = document.querySelector("#playerPosition");//puestoplayer
+let date=new Date();
+let dateGame=date.toLocaleDateString()
+let namePlayer= document.querySelector("input[name='txtname']")
 var error = document.getElementById("error");
 
 
@@ -74,21 +73,21 @@ document.querySelector("#return").onclick=return_principlaScreen
 document.querySelector(".play").onclick=()=>{
   
   countdownTimer=setInterval('secondPassed()', 1000);
-  document.querySelector("#player_name").innerHTML="Puntuación " + nombreJugador.value +" : ";
+  document.querySelector("#player_name").innerHTML="Puntuación " + namePlayer.value +" : ";
   
 }
 //Recupera datos del LocalStorage si los hay.
 document.querySelector("body").onload=()=>{
   createCards()
-  mostrarCarta()
+  showCard()
 
-  let jugadoresAntiguos=localStorage.getItem("partidas")
-  if(jugadoresAntiguos==undefined){
+  let playeresAntiguos=localStorage.getItem("games")
+  if(playeresAntiguos==undefined){
     //no hay nada
-     objSession=[]
+     playersHistory=[]
   }else{
     //hay datos en local storage
-    objSession=JSON.parse(jugadoresAntiguos)
+    playersHistory=JSON.parse(playeresAntiguos)
   }
   
 
@@ -96,26 +95,26 @@ document.querySelector("body").onload=()=>{
 
 
 function createCards(){
-  for (let i=0;i<elementos.length;i++){
-    //console.log(elementos[i])
+  for (let i=0;i<elements.length;i++){
+    //console.log(elements[i])
     for (let j=1; j<9; j++){
-      let carta={
-          valor:elementos[i],
-          imagen: elementos[i]+j+".svg",
+      let card={
+          valor:elements[i],
+          imagen: elements[i]+j+".svg",
       }
-      baraja.push(carta)
+      cards.push(card)
     }
       
   }
-  baraja = baraja.sort(()=>Math.random()-0.5)
+  cards = cards.sort(()=>Math.random()-0.5)
 }
 
 
 
 
-function mostrarCarta(){
-  jugada.src = "./images/baraja/" + baraja[0].imagen
-  cartaCentral.appendChild(jugada)
+function showCard(){
+  play.src = "./images/baraja/" + cards[0].imagen
+  centralCard.appendChild(play)
 }
 
 
@@ -123,49 +122,49 @@ function mostrarCarta(){
 
 eBox.onclick = matchCards;
 function matchCards(e){
-  console.log(baraja)
-   if(baraja[0].valor == e.target.classList[1]){
-    monton.push(baraja.shift())
-    mostrarCarta()
-    marcador++
-    sumaRestaPuntos(marcador)
-    cambiarColor2()
+  console.log(cards)
+   if(cards[0].valor == e.target.classList[1]){
+    trush.push(cards.shift())
+    showCard()
+    score++
+    addRestPoints(score)
+    changeColor2()
     element.forEach(e=>e.classList.remove("logo"))
     
  }
   else {
-    cambiarColor()   
-    marcador--
-    sumaRestaPuntos(marcador)
+    changeColor()   
+    score--
+    addRestPoints(score)
     document.getElementById(e.target.id).classList.add("logo")
   
   }
 }
 
-function sumaRestaPuntos(punto){
-  puntos.innerHTML=punto
+function addRestPoints(point){
+  points.innerHTML=point
 }
 
-//cambiar color de fondo en error y acierto
-function cambiarColor(){
-  let fondo=document.querySelector(".play_screen")
-  if(fondo.style.backgroundColor = "rgb(131, 114, 89)"){
-    fondo.style.backgroundColor = "red";
+//cambiar color de bg en error y acierto
+function changeColor(){
+  let bg=document.querySelector(".play_screen")
+  if(bg.style.backgroundColor = "rgb(131, 114, 89)"){
+    bg.style.backgroundColor = "red";
     error.play();
   }
 
  
 }
-function cambiarColor2(){
-  let fondo=document.querySelector(".play_screen")
-  if(fondo.style.backgroundColor = "red"){
-    fondo.style.backgroundColor = "rgb(131, 114, 89)";
+function changeColor2(){
+  let bg=document.querySelector(".play_screen")
+  if(bg.style.backgroundColor = "red"){
+    bg.style.backgroundColor = "rgb(131, 114, 89)";
     
   }
 
 }
 
-//CUENTA ATRÁS PARTIDA
+//CUENTA ATRÁS game
 
 function secondPassed() {
   let minutes = Math.round((seconds - 30)/60);
@@ -177,42 +176,42 @@ function secondPassed() {
   if (seconds == 0) {
     clearInterval(countdownTimer);
     document.getElementById('countdown').innerHTML = "TimeOut";
-    guardarPartida()
-    apareceRanking()
+    saveGame()
+    showRanking()
   } else {
     seconds--;
   }
 }
 
-function apareceRanking(){  
-  let prueba = objSession
-    prueba.sort((a, b) => (b.puntuacion - a.puntuacion))
+function showRanking(){  
+  let proof = playersHistory
+    proof.sort((a, b) => (b.puntuation - a.puntuation))
     
     
-    const index = prueba.findIndex(j =>j.fecha.getSeconds==fecha.getSeconds);
+    const index = proof.findIndex(j =>j.date.getSeconds==date.getSeconds);
       
     
-      prueba.forEach((r,i) => {
+      proof.forEach((r,i) => {
         if(i<10){
-          listaPuntajes.innerHTML+="<div>"+(i+1)+". "+ r.jugador+": "+"<span class='destacar'>"+r.puntuacion+" puntos "+"("+fechaJugada+")"+"</span></div>"
+          pointList.innerHTML+="<div>"+(i+1)+". "+ r.player+": "+"<span class='destacar'>"+r.puntuation+" puntos "+"("+dateGame+")"+"</span></div>"
         }     
       });
           
     ranking.style.display="flex";
-    puntosJugador.innerHTML="Tu puntuación es: " + marcador;
-    puestoJugador.innerHTML="Tu puesto en el Ranking es: " + (index+1);
-    objSession=JSON.parse(localStorage.getItem("partidas"));
+    pointsplayer.innerHTML="Tu puntuación es: " + score;
+    playerPosition.innerHTML="Tu puesto en el Ranking es: " + (index+1);
+    playersHistory=JSON.parse(localStorage.getItem("games"));
       
 }
 
-//guardar jugador en local storage
-function guardarPartida(){
-  partida={
-      jugador: nombreJugador.value,
-      puntuacion: marcador,
-      fecha: new Date()
+//guardar player en local storage
+function saveGame(){
+  game={
+      player: namePlayer.value,
+      puntuation: score,
+      date: new Date()
   }
-  fecha= new Date()
-  objSession.push(partida)
-  localStorage.setItem("partidas",JSON.stringify(objSession))
+  date= new Date()
+  playersHistory.push(game)
+  localStorage.setItem("games",JSON.stringify(playersHistory))
 }
