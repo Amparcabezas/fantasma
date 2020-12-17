@@ -10,7 +10,7 @@ let puntos= document.querySelector("#points");
 let marcador=0;
 let monton=[];
 let ranking=document.querySelector(".modal-ranking");
-let seconds = 7;
+let seconds = 25;
 let timeleft=3;
 let countdownTimer;
 let downloadTimer;
@@ -21,7 +21,7 @@ let puestoJugador = document.querySelector("#puestoJugador");
 let fecha=new Date();
 let fechaJugada=fecha.toLocaleDateString()
 let nombreJugador= document.querySelector("input[name='txtname']")
-
+var error = document.getElementById("error");
 
 
 //BOTÓN INSTRUCCIONES, ABRE INSTRUCCIONES
@@ -151,6 +151,7 @@ function cambiarColor(){
   let fondo=document.querySelector(".play_screen")
   if(fondo.style.backgroundColor = "rgb(131, 114, 89)"){
     fondo.style.backgroundColor = "red";
+    error.play();
   }
 
  
@@ -159,6 +160,7 @@ function cambiarColor2(){
   let fondo=document.querySelector(".play_screen")
   if(fondo.style.backgroundColor = "red"){
     fondo.style.backgroundColor = "rgb(131, 114, 89)";
+    
   }
 
 }

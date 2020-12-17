@@ -8,20 +8,14 @@
   width: 100%;
   height: 100vh;
   display: none;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   background-size: 100% 100%;
   color: white;
 }
 
 header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
   padding: 1px;
   width: 100%;
 }
@@ -32,15 +26,9 @@ button {
 }
 
 main {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   height: 100%;
 }
 
@@ -58,15 +46,11 @@ main {
 }
 
 .rowElements1 {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .rowElements2 {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   margin-top: -80px;
 }
 
@@ -98,30 +82,15 @@ main {
   -webkit-animation: tiembla 0.1s infinite;
 }
 
-@-webkit-keyframes tiembla {
-  0% {
-    -webkit-transform: rotateZ(-5deg);
-  }
-  50% {
-    -webkit-transform: rotateZ(-1deg);
-  }
-  100% {
-    -webkit-transform: rotateZ(5deg);
-  }
-}
-
 @keyframes tiembla {
   0% {
-    -webkit-transform: rotateZ(-5deg);
-            transform: rotateZ(-5deg);
+    transform: rotateZ(-5deg);
   }
   50% {
-    -webkit-transform: rotateZ(-1deg);
-            transform: rotateZ(-1deg);
+    transform: rotateZ(-1deg);
   }
   100% {
-    -webkit-transform: rotateZ(5deg);
-            transform: rotateZ(5deg);
+    transform: rotateZ(5deg);
   }
 }
 
@@ -163,9 +132,12 @@ main {
 
 @media (min-width: 1023px) {
   .rowElements1, .rowElements2 {
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
   }
+}
+
+.audio {
+  display: none;
 }
 
 :root {
@@ -176,8 +148,7 @@ main {
 
 .wrapper {
   padding: 1.5rem 0;
-  -webkit-filter: url("#goo");
-          filter: url("#goo");
+  filter: url("#goo");
 }
 
 .button {
@@ -199,12 +170,8 @@ main {
 
 .button.home {
   height: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .button:before,
@@ -216,12 +183,8 @@ main {
   display: inline-block;
   background: var(--color);
   border-radius: 50%;
-  -webkit-transition: -webkit-transform 1s ease;
-  transition: -webkit-transform 1s ease;
   transition: transform 1s ease;
-  transition: transform 1s ease, -webkit-transform 1s ease;
-  -webkit-transform: scale(0);
-          transform: scale(0);
+  transform: scale(0);
   z-index: -1;
 }
 
@@ -237,8 +200,7 @@ main {
 
 .button:hover:before,
 .button:hover:after {
-  -webkit-transform: none;
-          transform: none;
+  transform: none;
 }
 .instructions_screen {
   background-repeat: no-repeat;
@@ -250,9 +212,7 @@ main {
   position: fixed;
   color: #000;
   display: none;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   overflow-y: scroll;
 }
 
@@ -285,21 +245,13 @@ main {
 }
 
 .obj-centrar {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .obj-centrar .col-4 {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 .ejemplo {
@@ -307,13 +259,9 @@ main {
 }
 
 .ejemplo .col-4 {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 30%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 .ejemplo .obj-carta {
@@ -337,12 +285,8 @@ main {
   width: 100vw;
   height: 100%;
   display: none;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   background-size: 100% 100%;
   color: orange;
   font-size: 300px;
@@ -366,17 +310,10 @@ main {
 }
 
 .footer-modal {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
   padding: .5rem;
 }
 
@@ -422,19 +359,10 @@ body {
 
 .principal_screen {
   height: 100vh;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  justify-content: center;
+  flex-direction: column;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .title_play {
@@ -444,12 +372,8 @@ body {
 
 .secti {
   margin: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 .image {
@@ -457,12 +381,8 @@ body {
 }
 
 .logo_play {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .bot {
@@ -486,15 +406,9 @@ body {
   width: 100%;
   height: 50px;
   color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
   padding: 15px;
 }
 
