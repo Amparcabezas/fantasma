@@ -8,7 +8,6 @@ let eBox= document.querySelector(".eBox");
 let points= document.querySelector("#points");
 let score=0;
 let trush=[];
-let ranking=document.querySelector(".modal-ranking");
 let seconds = 60;
 let timeleft=3;
 let countdownTimer;
@@ -16,20 +15,21 @@ let downloadTimer;
 let pointsplayer=document.querySelector("#pointsplayer");
 let playersHistory=[];
 let pointList = document.querySelector(".puntuation");
-let playerPosition = document.querySelector("#playerPosition");
 let date=new Date();
 let dateGame=date.toLocaleDateString();
 let namePlayer= document.querySelector("input[name='txtname']");
 let error = document.getElementById("error");
 let song= document.querySelector(".song");
 let cuenta= document.querySelector(".cuenta");
+let playerPosition = document.querySelector("#playerPosition");
+let ranking=document.querySelector(".modal-ranking");
 
 
 
 document.getElementById("openInstructions").onclick=openInstruction;
 document.getElementById("openPlay").onclick=openGame;
-document.querySelector(".home").onclick=resetGameAndGoHome;
 document.querySelector("#return").onclick=return_principlaScreen;
+document.querySelector(".home").onclick=resetGameAndGoHome;
 document.querySelector(".play").onclick=showPoints;
 
 
