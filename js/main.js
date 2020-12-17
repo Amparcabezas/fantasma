@@ -9,7 +9,7 @@ let points= document.querySelector("#points");
 let score=0;
 let trush=[];
 let ranking=document.querySelector(".modal-ranking");
-let seconds = 25;
+let seconds = 60;
 let timeleft=3;
 let countdownTimer;
 let downloadTimer;
@@ -20,7 +20,9 @@ let playerPosition = document.querySelector("#playerPosition");
 let date=new Date();
 let dateGame=date.toLocaleDateString();
 let namePlayer= document.querySelector("input[name='txtname']");
-var error = document.getElementById("error");
+let error = document.getElementById("error");
+let song= document.querySelector(".song");
+let cuenta= document.querySelector(".cuenta");
 
 
 
@@ -60,10 +62,16 @@ function showCard(){
 function showPoints(){  
   countdownTimer=setInterval('secondPassed()', 1000);
   document.querySelector("#player_name").innerHTML="Puntuación " + namePlayer.value +" : ";
+  cuenta.play();
+  setTimeout(playMusic, 4000);
 }
 
+function playMusic() {
+  song.play();
+}
 
 function openGame(){
+  
     document.querySelector(".count_screen").style.display="flex";
       downloadTimer = setInterval(function(){
         if(timeleft <= 0){
@@ -71,6 +79,7 @@ function openGame(){
           document.querySelector("#play").style.display="block";
           document.querySelector(".count_screen").style.display="none";
           document.getElementById("countdown2").innerHTML = "";
+          
         } else {
           document.getElementById("countdown2").innerHTML = timeleft;
         }
@@ -83,8 +92,9 @@ function resetGameAndGoHome(){
     document.querySelector(".play_screen").style.display="none";
     clearInterval(countdownTimer);
     clearInterval(downloadTimer);
-    seconds=25;
+    seconds=60;
     timeleft=3;
+    song.pause()
        
 }
 
@@ -99,7 +109,6 @@ function return_principlaScreen(){
 document.querySelector("body").onload=()=>{
   createCards();
   showCard();
-
   let playeresAntiguos=localStorage.getItem("games")
   if(playeresAntiguos==undefined){
     //no hay nada
@@ -123,12 +132,17 @@ function matchCards(e){
     element.forEach(e=>e.classList.remove("logo"));
     
  }
-  else {
-    changeColor();   
-    score--;
-    addRestPoints(score);
-    document.getElementById(e.target.id).classList.add("logo");
+ else {
+  if(e.target.classList[1] != "e" || e.target.classList[1] != undefined){
+    score--
+    addRestPoints(score)
+    if(document.getElementById(e.target.id)){
+      changeColor() 
+      document.getElementById(e.target.id).classList.add("logo")
+    } 
   }
+}
+
 }
 
 function addRestPoints(point){
@@ -173,6 +187,7 @@ function secondPassed() {
 }
 
 function showRanking(){  
+  song.pause();
   let proof = playersHistory;
     proof.sort((a, b) => (b.puntuation - a.puntuation));
     
