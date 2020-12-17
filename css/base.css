@@ -129,6 +129,12 @@ main {
   width: 160px;
 }
 
+.mute {
+  height: 20px;
+  width: auto;
+  cursor: pointer;
+}
+
 @media (min-width: 320px) and (max-width: 425px) {
   .centralCard > img {
     width: 160px;

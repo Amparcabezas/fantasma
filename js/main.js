@@ -23,7 +23,7 @@ let song= document.querySelector(".song");
 let cuenta= document.querySelector(".cuenta");
 let playerPosition = document.querySelector("#playerPosition");
 let ranking=document.querySelector(".modal-ranking");
-
+let audio=document.querySelector(".mute");
 
 
 document.getElementById("openInstructions").onclick=openInstruction;
@@ -31,6 +31,8 @@ document.getElementById("openPlay").onclick=openGame;
 document.querySelector("#return").onclick=return_principlaScreen;
 document.querySelector(".home").onclick=resetGameAndGoHome;
 document.querySelector(".play").onclick=showPoints;
+audio.onclick=playMusic;
+
 
 
 function openInstruction(){
@@ -66,8 +68,19 @@ function showPoints(){
   setTimeout(playMusic, 4000);
 }
 
-function playMusic() {
-  song.play();
+function playMusic(e) {
+  if(!e) song.play();
+  else {
+    if(e.target.id === 'mute') {
+      song.pause();
+      e.target.id = 'sound';
+      e.target.src = "images/mudo.svg"
+    } else {
+      song.play();
+      e.target.id = 'mute';
+      e.target.src = "images/volumen.svg"
+    }
+  }
 }
 
 function openGame(){
