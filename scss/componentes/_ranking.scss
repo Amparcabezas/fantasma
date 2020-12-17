@@ -1,29 +1,39 @@
 .modal-ranking {
-    background-color: rgba(0, 0, 0, 0.7);
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    display: none;
-    top:0;
-  }
-  
-.modal .modal-container {
-    display: table-cell;
-    text-align: left;
-    vertical-align: middle;
-  }
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: none;
+  top:0;
+}
+
+.modal-dialog{
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  width: auto;
+  margin-top: 2rem;
+}
+
+.footer-modal{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  padding: .5rem;
+}
+
 .puntos-jugador{
-    font-size:2rem;
-    border: 5px dotted orange;
-    border-radius:5px;
-    padding: 5px 20px;
-    background-color: #073763;
-    color:white;
-    margin-top: 3rem;
+  font-size: 1.25rem;
+  border: 5px dotted orange;
+  border-radius:5px;
+  padding: 5px 20px;
+  background-color: #073763;
+  color:white;
 }
 
 .ranking-general{
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   border: 5px dotted  #073763;
   border-radius:5px;
   padding: 5px 20px;
@@ -34,4 +44,15 @@
 
 .destacar{
   color: #073763;
+}
+
+.font-ranking{
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: 1px 1px 2px black, 0 0 25px white;
+}
+
+button{
+  border:none;
 }
