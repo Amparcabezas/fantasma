@@ -112,8 +112,8 @@ function resetGameAndGoHome(){
     timeleft=3;
     song.pause()
     ranking.style.display="none";
-    createCards()
-       
+    pointList.innerHTML="";
+         
 }
 
 
@@ -214,6 +214,7 @@ function showRanking(){
       
     
       proof.forEach((r,i) => {
+        console.log(proof)
         if(i<10){
           pointList.innerHTML+="<div>"+(i+1)+". "+ r.player+": "+"<span class='destacar'>"+r.puntuation+" puntos "+"("+dateGame+")"+"</span></div>"
         }     
@@ -234,6 +235,6 @@ function saveGame(){
       date: new Date()
   }
   date= new Date();
-  playersHistory.push(game);
+  playersHistory.push(game); 
   localStorage.setItem("games",JSON.stringify(playersHistory));
 }
