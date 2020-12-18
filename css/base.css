@@ -514,19 +514,15 @@ body {
   margin: 25px;
 }
 
-.ppt {
-  width: 27px;
-  background-color: #d8d8d8;
-  border-radius: 10px;
-}
-
 .bieiviLogo {
   margin: 5px;
   height: 30px;
+  margin-left: 20px;
 }
 
 .networks {
   color: #fff;
+  margin-right: 20px;
 }
 
 input {
