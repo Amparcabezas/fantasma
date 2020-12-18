@@ -136,20 +136,22 @@ justify-content: space-between;
 .centralCard{
 min-height: 150px;
   }
-  
+
 @media (min-width: 320px) and (max-width: 425px) {
   .centralCard>img{
-    
+    min-height: 150px;
     width: 160px;
   }
 }
 @media (min-width: 426px) and (max-width: 767px) {
   .centralCard>img{
+    min-height: 150px;
     width: 120px;
   }
 }
 @media (min-width: 768px)and (max-width: 1023px) {
   .centralCard>img{
+    min-height: 150px;
     width: 160px;
      }
   .e{
@@ -160,6 +162,7 @@ min-height: 150px;
 
 @media (min-width: 1023px){
   .centralCard>img{
+    min-height: 150px;
     width: 100px;
      }
   .e{
