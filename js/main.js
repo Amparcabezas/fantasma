@@ -8,7 +8,7 @@ let eBox= document.querySelector(".eBox");
 let points= document.querySelector("#points");
 let score=0;
 let trush=[];
-let seconds = 10;
+let seconds = 64;
 let timeleft=3;
 let countdownTimer;
 let downloadTimer;
@@ -33,6 +33,7 @@ document.getElementById("openPlay").onclick=openGame;
 document.querySelector("#return").onclick=return_principlaScreen;
 document.querySelector(".home").onclick=resetGameAndGoHome;
 document.querySelector(".play").onclick=showPoints;
+eBox.onclick = matchCards;
 document.querySelector("#goBackHome").onclick=resetGameAndGoHome;
 audio.onclick=playMusic;
 
@@ -43,6 +44,7 @@ function openInstruction(){
 }
 
 function createCards(){
+  cards=[];
   for (let i=0;i<elements.length;i++){
     
     for (let j=1; j<9; j++){
@@ -55,6 +57,7 @@ function createCards(){
       
   }
   cards = cards.sort(()=>Math.random()-0.5);
+
 }
 
 
@@ -106,29 +109,28 @@ function openGame(){
 
 
 function resetGameAndGoHome(){
+
     document.querySelector(".play_screen").style.display="none";
     clearInterval(countdownTimer);
     clearInterval(downloadTimer);
-    seconds=10;
+    seconds=64;
     timeleft=3;
-    song.pause()
+    song.pause();
     ranking.style.display="none";
     score=0;
     points.innerHTML=""; 
     pointList.innerHTML="";
+    createCards();
+    showCard();
     document.querySelectorAll(".e").forEach(e=>e.classList.remove("logo"));
     bg.style.backgroundColor = "rgb(131, 114, 89)";
-
     
-    
-         
 }
 
 
 function return_principlaScreen(){
     document.querySelector("#instructions").style.display="none";
 }
-
 
 
 //Recupera datos del LocalStorage si los hay.
@@ -147,7 +149,6 @@ document.querySelector("body").onload=()=>{
 
 
 //Match - Coincidencia
-eBox.onclick = matchCards;
 function matchCards(e){
   
    if(cards[0].valor == e.target.classList[1]){
@@ -233,7 +234,7 @@ function showRanking(){
     pointsplayer.innerHTML="Tu puntuación es: " + score;
     playerPosition.innerHTML="Tu puesto en el Ranking es: " + (index+1);
     playersHistory=JSON.parse(localStorage.getItem("games"));
-      
+    
 }
 
 //guardar player en local storage
