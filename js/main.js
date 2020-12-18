@@ -22,6 +22,7 @@ let error = document.getElementById("error");
 let song= document.querySelector(".song");
 let cuenta= document.querySelector(".cuenta");
 let playerPosition = document.querySelector("#playerPosition");
+let bg=document.querySelector(".play_screen");
 let ranking=document.querySelector(".modal-ranking");
 let audio=document.querySelector(".mute");
 
@@ -112,7 +113,14 @@ function resetGameAndGoHome(){
     timeleft=3;
     song.pause()
     ranking.style.display="none";
+    score=0;
+    points.innerHTML=""; 
     pointList.innerHTML="";
+    document.querySelectorAll(".e").forEach(e=>e.classList.remove("logo"));
+    bg.style.backgroundColor = "rgb(131, 114, 89)";
+
+    
+    
          
 }
 
@@ -141,6 +149,7 @@ document.querySelector("body").onload=()=>{
 //Match - Coincidencia
 eBox.onclick = matchCards;
 function matchCards(e){
+  
    if(cards[0].valor == e.target.classList[1]){
     trush.push(cards.shift());
     showCard();
@@ -151,7 +160,7 @@ function matchCards(e){
     
  }
  else {
-  if(e.target.classList[1] != "e" || e.target.classList[1] != undefined){
+  if(e.target.id){
     score--
     addRestPoints(score)
     if(document.getElementById(e.target.id)){
@@ -169,7 +178,7 @@ function addRestPoints(point){
 
 
 function changeColor(){
-  let bg=document.querySelector(".play_screen");
+  
   if(bg.style.backgroundColor = "rgb(131, 114, 89)"){
     bg.style.backgroundColor = "red";
     error.play();
@@ -214,7 +223,7 @@ function showRanking(){
       
     
       proof.forEach((r,i) => {
-        console.log(proof)
+        //console.log(proof)
         if(i<10){
           pointList.innerHTML+="<div>"+(i+1)+". "+ r.player+": "+"<span class='destacar'>"+r.puntuation+" puntos "+"("+dateGame+")"+"</span></div>"
         }     
