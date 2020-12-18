@@ -133,9 +133,13 @@ justify-content: space-between;
   cursor: pointer;
   }
 
-
+.centralCard{
+min-height: 150px;
+  }
+  
 @media (min-width: 320px) and (max-width: 425px) {
   .centralCard>img{
+    
     width: 160px;
   }
 }
