@@ -8,7 +8,7 @@ let eBox= document.querySelector(".eBox");
 let points= document.querySelector("#points");
 let score=0;
 let trush=[];
-let seconds = 60;
+let seconds = 10;
 let timeleft=3;
 let countdownTimer;
 let downloadTimer;
@@ -26,11 +26,13 @@ let ranking=document.querySelector(".modal-ranking");
 let audio=document.querySelector(".mute");
 
 
+
 document.getElementById("openInstructions").onclick=openInstruction;
 document.getElementById("openPlay").onclick=openGame;
 document.querySelector("#return").onclick=return_principlaScreen;
 document.querySelector(".home").onclick=resetGameAndGoHome;
 document.querySelector(".play").onclick=showPoints;
+document.querySelector("#goBackHome").onclick=resetGameAndGoHome;
 audio.onclick=playMusic;
 
 
@@ -98,6 +100,7 @@ function openGame(){
         }
         timeleft -= 1;
       }, 1000);
+      
 }
 
 
@@ -105,9 +108,11 @@ function resetGameAndGoHome(){
     document.querySelector(".play_screen").style.display="none";
     clearInterval(countdownTimer);
     clearInterval(downloadTimer);
-    seconds=60;
+    seconds=10;
     timeleft=3;
     song.pause()
+    ranking.style.display="none";
+    createCards()
        
 }
 
