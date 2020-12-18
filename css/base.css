@@ -141,21 +141,21 @@ main {
 
 @media (min-width: 320px) and (max-width: 425px) {
   .centralCard > img {
-    min-height: 150px;
+    min-height: 208px;
     width: 160px;
   }
 }
 
 @media (min-width: 426px) and (max-width: 767px) {
   .centralCard > img {
-    min-height: 150px;
+    min-height: 208px;
     width: 120px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .centralCard > img {
-    min-height: 150px;
+    min-height: 278px;
     width: 160px;
   }
   .e {
@@ -166,7 +166,7 @@ main {
 
 @media (min-width: 1023px) {
   .centralCard > img {
-    min-height: 150px;
+    min-height: 176px;
     width: 100px;
   }
   .e {
