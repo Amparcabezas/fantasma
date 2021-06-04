@@ -1,0 +1,544 @@
+.play_screen {
+  background-image: url("../images/fondo.png");
+  background-color: #837259;
+  font-family: 'Fredericka the Great', cursive;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-size: 100% 100%;
+  color: white;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 1px;
+  width: 100%;
+}
+
+button {
+  padding: 10px;
+  margin: 10px;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+}
+
+#screenSetting {
+  margin-top: -45px;
+}
+
+.eBox {
+  margin: 0px 50px;
+}
+
+.e {
+  height: 100px;
+  width: auto;
+}
+
+.rowElements1 {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.rowElements2 {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: -80px;
+}
+
+.ajusteCarta {
+  margin: -80px 0px;
+}
+
+.timer {
+  font-size: 30px;
+  border: 3px solid orange;
+  border-radius: 30px;
+  background-color: #399271;
+  color: white;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.lab {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 2em;
+  color: white;
+}
+
+.juPoints {
+  position: relative;
+}
+
+.logo {
+  -webkit-animation: tiembla 0.1s infinite;
+}
+
+@-webkit-keyframes tiembla {
+  0% {
+    -webkit-transform: rotateZ(-5deg);
+  }
+  50% {
+    -webkit-transform: rotateZ(-1deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(5deg);
+  }
+}
+
+@keyframes tiembla {
+  0% {
+    -webkit-transform: rotateZ(-5deg);
+            transform: rotateZ(-5deg);
+  }
+  50% {
+    -webkit-transform: rotateZ(-1deg);
+            transform: rotateZ(-1deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(5deg);
+            transform: rotateZ(5deg);
+  }
+}
+
+.centralCard > img {
+  width: 160px;
+}
+
+.mute {
+  height: 20px;
+  width: auto;
+  cursor: pointer;
+}
+
+.centralCard {
+  min-height: 150px;
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+  .centralCard > img {
+    min-height: 208px;
+    width: 160px;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 767px) {
+  .centralCard > img {
+    min-height: 208px;
+    width: 120px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .centralCard > img {
+    min-height: 278px;
+    width: 160px;
+  }
+  .e {
+    height: 150px;
+    width: auto;
+  }
+}
+
+@media (min-width: 1023px) {
+  .centralCard > img {
+    min-height: 176px;
+    width: 100px;
+  }
+  .e {
+    height: 100px;
+    width: auto;
+  }
+}
+
+@media (min-width: 1023px) {
+  .rowElements1, .rowElements2 {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+.audio {
+  display: none;
+}
+
+:root {
+  --bg: black;
+  --color: white;
+  --font: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.wrapper {
+  padding: 1.5rem 0;
+  -webkit-filter: url("#goo");
+          filter: url("#goo");
+}
+
+.button {
+  margin: 10px;
+  display: inline-block;
+  text-align: center;
+  background: var(--color);
+  color: var(--bg);
+  font-weight: bold;
+  padding: 1.18em 1.32em 1.03em;
+  line-height: 1;
+  border-radius: 1em;
+  position: relative;
+  min-width: 5.23em;
+  text-decoration: none;
+  font-family: var(--font);
+  font-size: 1.00rem;
+  outline: none;
+}
+
+.button.home {
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.button:before,
+.button:after {
+  width: 4.4em;
+  height: 2.95em;
+  position: absolute;
+  content: "";
+  display: inline-block;
+  background: var(--color);
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+  transition: transform 1s ease, -webkit-transform 1s ease;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  z-index: -1;
+}
+
+.button:before {
+  top: -25%;
+  left: 20%;
+}
+
+.button:after {
+  bottom: -25%;
+  right: 20%;
+}
+
+.button:hover:before,
+.button:hover:after {
+  -webkit-transform: none;
+          transform: none;
+}
+.instructions_screen {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  color: #000;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow-y: scroll;
+}
+
+.titleInstructions {
+  background-color: #073763;
+  border: 3px solid #ff7400;
+  color: white;
+  border-radius: 10px;
+}
+
+.explicacion_instrucciones {
+  background-color: rgba(255, 255, 255, 0.849);
+  border: 3px solid #399271;
+  border-radius: 10px;
+  height: 100%vh;
+}
+
+.texto {
+  color: #073763;
+  font-size: 1.1em;
+  padding: 7px;
+}
+
+.subtitulo-inst {
+  font-weight: 600;
+}
+
+.obj {
+  width: 120%;
+}
+
+.obj-centrar {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.obj-centrar .col-4 {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ejemplo {
+  background-color: #0737635d;
+}
+
+.ejemplo .col-4 {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 30%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ejemplo .obj-carta {
+  width: 100px;
+}
+
+.flechaObj {
+  width: 32%;
+  height: 50px;
+}
+
+.captura {
+  width: 120%;
+}
+
+.count_screen {
+  background-color: #306e3f;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100%;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-size: 100% 100%;
+  color: orange;
+  font-size: 300px;
+}
+
+.modal-ranking {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: none;
+  top: 0;
+}
+
+.modal-dialog {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  width: auto;
+  margin-top: 2rem;
+}
+
+.footer-modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: .5rem;
+}
+
+.points-player {
+  font-size: 1.25rem;
+  border: 5px dotted orange;
+  border-radius: 5px;
+  padding: 5px 20px;
+  background-color: #073763;
+  color: white;
+}
+
+.ranking-general {
+  font-size: 1.00rem;
+  border: 5px dotted  #073763;
+  border-radius: 5px;
+  padding: 5px 20px;
+  background-color: #399271;
+  color: white;
+  margin-top: 1.75rem;
+}
+
+.destacar {
+  color: #073763;
+}
+
+.font-ranking {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: 1px 1px 2px black, 0 0 25px white;
+}
+
+button {
+  border: none;
+}
+
+body {
+  background-image: url("../images/fondoBienvenida.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.principal_screen {
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.title_play {
+  color: white;
+  margin-top: 20px;
+}
+
+.secti {
+  margin: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.image {
+  width: 50px;
+}
+
+.logo_play {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bot {
+  background-color: #073763;
+  border: 3px solid #399271;
+  color: white;
+}
+
+.bot:hover {
+  color: #ff7400;
+}
+
+.i {
+  margin: 20px;
+}
+
+.footer_principal {
+  background-color: transparent;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.margens {
+  margin: 25px;
+}
+
+.bieiviLogo {
+  margin: 5px;
+  height: 30px;
+  margin-left: 20px;
+}
+
+.networks {
+  color: #fff;
+  margin-right: 20px;
+}
+
+input {
+  border: 0px;
+  border: 3px solid #ff7400;
+  background: white;
+  color: #073763;
+  border-radius: 5px;
+  font-size: 20px;
+}
+/*# sourceMappingURL=base.css.map */
